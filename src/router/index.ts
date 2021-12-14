@@ -5,23 +5,21 @@ import {
 } from 'vue-router'
 
 import Home from '@/views/Home/index.vue'
-import Other from '@/views/Other/index.vue'
+import Navigation from '@/views/Navigation/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
     component: Home,
-  },
-  {
+  }, {
+    path: '/navigation',
+    name: 'Navigation',
+    component: Navigation,
+  }, {
     path: '/:catchAll(.*)',
     component: Home,
   },
-  {
-    path: '/other',
-    name: 'Other',
-    component: Other
-  }
 ]
 
 const router = createRouter({
