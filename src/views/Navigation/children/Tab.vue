@@ -3,7 +3,7 @@
  * @Description  : 顶部tab
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-14 18:19:24
+ * @LastEditTime : 2021-12-16 10:16:19
 -->
 
 <template>
@@ -30,14 +30,16 @@
 </template>
 
 <script lang='ts' setup>
-import Search from './components/Search.vue'
-import { inject, onMounted } from 'vue'
+import Search from '@/views/Navigation/components/Search.vue'
+import { onMounted, inject } from 'vue'
 import initWeather from '@/utils/weather'
 
-const utils = inject('utils')
+const api:any = inject('$api')
 
-onMounted(() => {
+onMounted(async () => {
   initWeather()
+  const hitokoto = await api.getHitokoto
+  console.log(hitokoto)
 })
 </script>
 
@@ -53,6 +55,7 @@ onMounted(() => {
     content ''
     background url('@/assets/navigation/tab/bg_tab.png') no-repeat
     background-position center
+    background-size cover
     width 100%
     height 100%
     filter brightness(0.5)

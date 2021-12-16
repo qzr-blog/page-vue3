@@ -1,33 +1,38 @@
 import ic_sign from '@/assets/navigation/side/ic_sign.png'
+import ic_dsm from '@/assets/logo/nas/nas.png'
 import ic_video from '@/assets/navigation/side/ic_video.png'
 import ic_img from '@/assets/navigation/side/ic_img.png'
 import ic_note from '@/assets/navigation/side/ic_note.png'
 import ic_music from '@/assets/navigation/side/ic_music.png'
 
 import often from './mark_modules/often'
+import nas from './mark_modules/nas'
+import docker from './mark_modules/docker'
 
-const markMap = [
+interface mark {
+  title: string   // 标题名
+  alias: string   // 别名 定义symbol icon
+  fine?: string    // 定义带颜色的symbol icon
+  img?: any       // 定义png图标
+  content: any[]  // 定义子项目
+}
+
+const markMap: mark[] = [
   {
-    title: '常用分类',
+    title: '常用',
     alias: 'often',
-    img: ic_sign,
     content: often
   },
   {
-    title: '视频媒体',
-    img: ic_video
+    title: 'Nas',
+    alias: 'nas',
+    content: nas
   },
   {
-    title: '高清图库',
-    img: ic_img
-  },
-  {
-    title: '便签笔记',
-    img: ic_note
-  },
-  {
-    title: '音乐平台',
-    img: ic_music
+    title: 'Docker',
+    alias: 'docker',
+    fine: 'Docker',
+    content: docker
   }
 ]
 

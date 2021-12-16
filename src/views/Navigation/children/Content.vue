@@ -3,18 +3,23 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-14 17:42:58
+ * @LastEditTime : 2021-12-15 16:23:25
 -->
 
 <template>
   <div class="content-container">
     <div>
       <div v-for="(marks, index) of markMap"
+           :id="marks.alias"
            :key="index"
            class="mark-box">
 
         <div class="title">
-          <img :src="marks.img">
+          <div class="title-icon">
+            <Icon :info="marks"
+                  :fine="true"
+                  :style="{fontSize: '18px', color: '#666'}" />
+          </div>
           <span>{{ marks.title }}</span>
         </div>
 
@@ -23,7 +28,11 @@
                :key="idx"
                class="content"
                @click="goUrl(item)">
-            <img :src="item.icon">
+            <div class="content-icon">
+              <Icon :info="item"
+                    :fine="true"
+                    :style="{fontSize: '32px', color: '#666'}" />
+            </div>
             <div>
               <div class="name">{{ item.name }}</div>
               <div class="desc">{{ item.desc }}</div>
@@ -37,13 +46,12 @@
 </template>
 
 <script lang='ts' setup>
-import { inject } from 'vue'
+import Icon from '@/views/Navigation/components/Icon.vue'
 import { markMap } from '@/config/markMap'
 
 function goUrl(item:any) {
-  window.location.href = item.url
+  window.open(item.url)
 }
-const utils = inject('utils')
 </script>
 
 <style scoped lang='stylus'>
@@ -59,9 +67,7 @@ const utils = inject('utils')
   {$flex}
   justify-content flex-start
   margin-bottom 35px
-  img
-    width 18px
-    height 18px
+  .title-icon
     margin-right 10px
   span
     font-size 18px
@@ -69,23 +75,32 @@ const utils = inject('utils')
 .content-box
   {$flex}
   justify-content flex-start
+  flex-wrap wrap
 
 .content
   {$flex}
   align-items flex-start
+  justify-content flex-start
   background white
-  width 270px
+  width 210px
+  height 65px
   padding 15px 30px
   border-radius 8px
   box-shadow: 0px 2px 5px rgba(153, 153, 153, 0.16)
   margin-right 36px
+  margin-bottom 36px
   cursor pointer
-  img
+  .content-icon
     margin-right 15px
+
 
 .desc
   font-size 14px
   color #8F8F8F
+  display:-webkit-box;
+  overflow:hidden;
+  -webkit-box-orient:vertical; //子元素应该被水平或垂直排列
+  -webkit-line-clamp:2;  //3行后显示省略号
 
 .name
   color #3C3C3C

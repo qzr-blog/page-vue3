@@ -3,14 +3,18 @@
  * @Description  : 搜索框控件
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-14 18:23:03
+ * @LastEditTime : 2021-12-16 10:09:27
 -->
 
 <template>
   <div>
     <div class="check-tab">
-      <div class="active">百度</div>
-      <div>谷歌</div>
+      <div v-for="(item, index) of checkList"
+           :key="index"
+           :class="{active: checkActive === index}"
+           @click="checkActive = index">
+        {{ item.name }}
+      </div>
     </div>
 
     <div class="search-container">
@@ -28,14 +32,24 @@
 </template>
 
 <script lang='ts' setup>
-import { inject, ref } from 'vue'
+import { ref } from 'vue'
 import ic_search from '@/assets/navigation/search/ic_search.png'
 
 const inputText = ref('')
-const utils = inject('utils')
+const checkActive = ref(0)
+
+const checkList = [{
+  name: '百度',
+  href: 'https://www.baidu.com/s?wd='
+}, {
+  name: '谷歌',
+  href: 'https://www.google.com/search?q='
+}]
 
 function goSearch() {
-  window.location.href = `https://www.baidu.com/s?wd=${inputText.value}`
+  const href = `${checkList[checkActive.value].href}${inputText.value}`
+
+  window.open(href)
 }
 </script>
 
@@ -43,7 +57,7 @@ function goSearch() {
 .search-container
   width 950px
   height 60px
-  >>> .el-input__inner
+  :deep(.el-input__inner)
     height 55px !important
     border-radius 50px
     font-size 18px
@@ -51,7 +65,7 @@ function goSearch() {
     border none
     padding 0 30px
     color white
-  >>> .el-input__suffix-inner
+  :deep(.el-input__suffix-inner)
     {$flex}
     padding-right 5px
 
@@ -69,6 +83,7 @@ function goSearch() {
     margin 0 25px
     font-size 18px
     padding-bottom 10px
+    cursor pointer
   .active
     position relative
     // border-bottom 3px solid white

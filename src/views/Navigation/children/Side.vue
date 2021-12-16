@@ -3,24 +3,25 @@
  * @Description  : 侧面栏
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-14 18:17:39
+ * @LastEditTime : 2021-12-16 11:36:25
 -->
 
 <template>
   <div class="placeholder" />
   <div class="side-container">
     <div class="avatar-box">
-      <!-- <img src="@/assets/logo.png"
-           class="avatar"> -->
       <el-avatar
         :src="avatar"
         :size="150" />
     </div>
     <div class="content">
       <div v-for="(item, index) of content"
-           :key="index">
-        <img :src="item.img"
-             alt="图标">
+           :key="index"
+           @click="goHref(item.alias)">
+        <div class="icon-box">
+          <Icon :info="item"
+                :style="{fontSize: '18px', color: '#898a8a'}" />
+        </div>
         <span>{{ item.title }}</span>
       </div>
     </div>
@@ -30,11 +31,16 @@
 <script lang="ts" setup>
 import { inject } from 'vue'
 import { markMap } from '@/config/markMap'
-import avatar from '@/assets/logo.png'
-
-const utils = inject('utils')
+import avatar from '@/assets/logo.jpg'
+import Icon from '@/views/Navigation/components/Icon.vue'
 
 const content = markMap
+
+function goHref(href:string) {
+  window.document.querySelector(`#${href}`)?.scrollIntoView({
+    behavior: 'smooth', // 定义动画过渡效果， "auto"或 "smooth" 之一。默认为 "auto"
+  })
+}
 </script>
 
 <style scoped lang="stylus">
@@ -54,7 +60,7 @@ const content = markMap
   width 100%
   flex-direction column
   align-items flex-start
-  div
+  > div
     padding 20px 40px
     margin-left 20px
     {$flex}
@@ -66,6 +72,8 @@ const content = markMap
       cursor pointer
       span
         color white
+      &:deep(svg)
+        color white !important
     // &:not(&:last-child)::after
     //   content ''
     //   height 1px
@@ -74,14 +82,12 @@ const content = markMap
     //   bottom 0
     //   background #303336
     //   position absolute
-    img
-      width 18px
-      height 18px
-      margin-right 20px
     span
       font-size 16px
       color #898A8A
 
+.icon-box
+  margin-right 20px
 
 .avatar
   height 150px
@@ -90,7 +96,7 @@ const content = markMap
   border-radius 100%
 
 .avatar-box
-  padding 50px 75px
+  padding 50px 0
   position relative
   // &::after
   //   content ''

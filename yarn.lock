@@ -472,10 +472,10 @@
   resolved "https://r.cnpmjs.org/@constq/eslint-config-qzr/download/@constq/eslint-config-qzr-0.0.2.tgz#165e88c8f3c09d7295a9b2c986320075c6a7423e"
   integrity sha1-Fl6IyPPAnXKVqbLJhjIAdcanQj4=
 
-"@constq/qzr-utils@latest":
-  version "1.1.8"
-  resolved "https://r.cnpmjs.org/@constq/qzr-utils/download/@constq/qzr-utils-1.1.8.tgz#b740c80cbf92ca292829f941f6a179cc9be5e01e"
-  integrity sha1-t0DIDL+SyikoKflB9qF5zJvl4B4=
+"@constq/qzr-utils@1.1.16":
+  version "1.1.16"
+  resolved "https://registry.npmmirror.com/@constq/qzr-utils/download/@constq/qzr-utils-1.1.16.tgz#55a9b7b463414c5e7207a5cc6be920d3ab49122d"
+  integrity sha512-CWxS7brGgp3YPRkHNua8ZCTmUe2lU8G372lUJiIAdRTlz7wyQqt71/bwiWI02iFyryaI+VxzqqAgABXK51jqTg==
 
 "@element-plus/icons-vue@^0.2.2":
   version "0.2.4"

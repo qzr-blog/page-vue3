@@ -3,7 +3,7 @@
  * @Description  : 导航页
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-14 17:44:51
+ * @LastEditTime : 2021-12-15 11:25:17
 -->
 
 <template>
@@ -17,14 +17,9 @@
 </template>
 
 <script lang='ts' setup>
-import { inject } from 'vue'
-
 import Side from './children/Side.vue'
 import Tab from './children/Tab.vue'
 import Content from './children/Content.vue'
-
-
-const utils = inject('utils')
 </script>
 
 <style scoped lang='stylus'>

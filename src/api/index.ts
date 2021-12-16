@@ -1,5 +1,5 @@
 import axios from './axios'
 
 export default {
-  test: true
+  getHitokoto: axios.get('https://v1.hitokoto.cn?c=d')
 }

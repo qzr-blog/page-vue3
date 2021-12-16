@@ -1,14 +1,15 @@
-import baidu from '@/assets/logo/often/baidu.png'
+import jellyfin from '@/assets/logo/often/jellyfin.png'
+import { NASURL } from '@/config/constant'
 
 const index = [{
-  name: '百度',
-  url: 'https://www.baidu.com/',
-  icon: baidu,
-  desc: '一个自由软件媒体系统，控制媒体管理和流媒体'
+  name: 'DSM',
+  url: NASURL,
+  alias: 'Synology',
+  desc: '群晖控制台'
 }, {
-  name: '百度',
-  url: 'https://www.baidu.com/',
-  icon: baidu,
+  name: 'Jellyfin',
+  url: 'https://router.qzran.cn:8001/web/index.html',
+  img: jellyfin,
   desc: '一个自由软件媒体系统，控制媒体管理和流媒体'
 }]
 
