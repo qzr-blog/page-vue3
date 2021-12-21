@@ -11,7 +11,8 @@
     "prepare": "husky install",
     "test": "jest",
     "cz": "git add . && git cz",
-    "docker": "docker image build -t constq/page:v1 ."
+    "docker": "docker image build -t constq/page:v1 .",
+    "docker:dev": "docker-compose -f ./docker/docker-compose-dev.yml up"
   },
   "lint-staged": {
     "*.{vue,js,ts}": "eslint --fix"
@@ -25,7 +26,7 @@
     "vuex": "^4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.2.1",
+    "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^13.2.0",
     "@constq/eslint-config-qzr": "latest",
     "@constq/qzr-utils": "1.1.16",

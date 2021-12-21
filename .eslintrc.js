@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-16 10:23:23
+ * @LastEditTime : 2021-12-20 18:30:44
  */
 
 module.exports = {
@@ -32,7 +32,7 @@ module.exports = {
     '@typescript-eslint',
     'jest'
   ],
-  ignorePatterns: ['index.html'],
+  ignorePatterns: ['index.html', '/docker'],
   rules: {
   },
 }

@@ -3,7 +3,7 @@
  * @Description  : 顶部tab
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-16 10:16:19
+ * @LastEditTime : 2021-12-20 10:41:41
 -->
 
 <template>
@@ -19,7 +19,7 @@
       </div>
       <div>
         <img src="@/assets/navigation/tab/ic_blog.png">
-        <span>家园</span>
+        <span>家园1</span>
       </div>
     </div>
 

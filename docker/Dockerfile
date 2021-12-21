@@ -4,7 +4,7 @@ FROM node:latest as build-stage
 LABEL maintainer="z5021996@vip.qq.com"
 
 # 拷贝前端项目 当前目录下的所有文件到app目录下(./指当前所有的代码路径 .指上一步cd到app的路径)
-COPY /dist /app/dist
+COPY ../dist /app/dist
 # COPY . /app
 
 # 指定接下来的工作路径为/app  - 类似于cd命令
