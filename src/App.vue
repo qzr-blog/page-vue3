@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-14 14:23:59
+ * @LastEditTime : 2021-12-23 14:24:18
 -->
 
 
@@ -19,6 +19,7 @@ const $utils:any = inject('$utils')
 
 console.log($utils)
 console.log($api)
+console.log('env', import.meta.env)
 
 onMounted(() => {
   window.addEventListener('unload', e => {

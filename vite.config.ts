@@ -26,15 +26,15 @@ export default defineConfig({
   base: './',
   server: {
     port: 3001,
-    cors: true // 允许跨域
+    cors: true, // 允许跨域
     // 设置代理
-    // proxy: {
-    //   '/api': {
-    //     target: 'http://xxx.xxx.xxx.xxx:8000',
-    //     changeOrigin: true,
-    //     rewrite: (path) => path.replace('/api/', '/')
-    //   }
-    // }
+    proxy: {
+      '/api': {
+        target: 'http://localhost:7001',
+        changeOrigin: true,
+        rewrite: (path) => path.replace('/api/', '/api/')
+      }
+    }
   },
   css: {
     preprocessorOptions: {

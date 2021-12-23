@@ -18,7 +18,7 @@ const option:any = {
   },
 }
 
-if (import.meta.env.DEV) option.baseURL = '/api'
+option.baseURL = '/api'
 
 const Axios = axios.create(option)
 
@@ -40,9 +40,12 @@ Axios.interceptors.response.use(
     if (!res.data) {
       console.error('发生未知错误')
       return Promise.reject(res)
-    } else if (res.data.status !== 'success' || res.data.code !== 200) {
+    } else if (res.data.message !== 'success' || res.data.code !== 200) {
       console.error(res.data.message)
     }
+
+    if (res.data.info) return res.data.info
+
     return res.data
   },
   (error) => {

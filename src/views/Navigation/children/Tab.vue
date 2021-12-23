@@ -3,24 +3,29 @@
  * @Description  : 顶部tab
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-20 10:41:41
+ * @LastEditTime : 2021-12-22 15:14:50
 -->
 
 <template>
   <div class="tab-container">
-    <div class="tab-box">
-      <img src="@/assets/navigation/tab/ic_pickup.png"
-           class="ic-pickup">
-      <!-- <div>武汉 晴 8°C 良</div> -->
-      <div id="he-plugin-simple" />
-      <div>
-        <img src="@/assets/navigation/tab/ic_home.png">
-        <span>首页</span>
+    <div class="tab">
+      <div class="tab-box">
+        <img src="@/assets/navigation/tab/ic_pickup.png"
+             class="ic-pickup">
+        <!-- <div>武汉 晴 8°C 良</div> -->
+        <div id="he-plugin-simple" />
+        <div>
+          <img src="@/assets/navigation/tab/ic_home.png">
+          <span>首页</span>
+        </div>
+        <div>
+          <img src="@/assets/navigation/tab/ic_blog.png">
+          <span>家园</span>
+        </div>
+
       </div>
-      <div>
-        <img src="@/assets/navigation/tab/ic_blog.png">
-        <span>家园1</span>
-      </div>
+
+      <div class="textInfo">{{ textInfo }}</div>
     </div>
 
     <div class="search-box">
@@ -31,14 +36,16 @@
 
 <script lang='ts' setup>
 import Search from '@/views/Navigation/components/Search.vue'
-import { onMounted, inject } from 'vue'
+import { onMounted, inject, ref } from 'vue'
 import initWeather from '@/utils/weather'
 
 const api:any = inject('$api')
+const textInfo = ref('')
 
 onMounted(async () => {
   initWeather()
   const hitokoto = await api.getHitokoto
+  textInfo.value = hitokoto.hitokoto
   console.log(hitokoto)
 })
 </script>
@@ -47,7 +54,7 @@ onMounted(async () => {
 .tab-container
   position relative
   height 450px
-  background-size 100% 100%
+  background-size cover
   &::after
     position absolute
     top 0
@@ -91,4 +98,12 @@ onMounted(async () => {
   position relative
   width 100%
   margin-top 100px
+
+.tab
+  {$flex}
+  z-index 9
+  justify-content space-between
+  .textInfo
+    z-index 9
+    color white
 </style>

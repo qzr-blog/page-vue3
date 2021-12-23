@@ -8,17 +8,18 @@ import Home from '@/views/Home/index.vue'
 import Navigation from '@/views/Navigation/index.vue'
 
 const routes: Array<RouteRecordRaw> = [
+  // {
+  //   path: '/',
+  //   name: 'Home',
+  //   component: Home,
+  // },
   {
-    path: '/',
-    name: 'Home',
-    component: Home,
-  }, {
     path: '/navigation',
     name: 'Navigation',
     component: Navigation,
   }, {
     path: '/:catchAll(.*)',
-    component: Home,
+    component: Navigation,
   },
 ]
 

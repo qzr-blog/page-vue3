@@ -11,8 +11,9 @@
     "prepare": "husky install",
     "test": "jest",
     "cz": "git add . && git cz",
-    "docker": "docker image build -t constq/page:v1 .",
-    "docker:dev": "docker-compose -f ./docker/docker-compose-dev.yml up"
+    "docker:dev": "docker-compose -f ./docker/docker-compose-dev.yml up",
+    "docker": "docker build -t page-blog:front-v1 .",
+    "release": "yarn buildProd && docker build -t page-blog:front-v1 ."
   },
   "lint-staged": {
     "*.{vue,js,ts}": "eslint --fix"
