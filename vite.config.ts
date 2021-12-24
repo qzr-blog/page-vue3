@@ -30,7 +30,7 @@ export default defineConfig({
     // 设置代理
     proxy: {
       '/api': {
-        target: 'http://localhost:7001',
+        target: 'http://localhost:7009',
         changeOrigin: true,
         rewrite: (path) => path.replace('/api/', '/api/')
       }
