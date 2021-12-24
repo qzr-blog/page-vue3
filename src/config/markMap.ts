@@ -26,6 +26,7 @@ const markMap: mark[] = [
   {
     title: 'Nas',
     alias: 'nas',
+    fine: 'synology',
     content: nas
   },
   {
