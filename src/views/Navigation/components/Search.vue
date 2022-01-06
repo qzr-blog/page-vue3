@@ -11,8 +11,8 @@
     <div class="check-tab">
       <div v-for="(item, index) of checkList"
            :key="index"
-           :class="{active: checkActive === index}"
-           @click="checkActive = index">
+           :class="{active: configStore.searchActive === index}"
+           @click="configStore.searchActive = index">
         {{ item.name }}
       </div>
     </div>
@@ -33,10 +33,13 @@
 
 <script lang='ts' setup>
 import { ref } from 'vue'
+import { useConfig } from '@/store/config'
+
 import ic_search from '@/assets/navigation/search/ic_search.png'
 
+const configStore = useConfig()
+
 const inputText = ref('')
-const checkActive = ref(0)
 
 const checkList = [{
   name: '百度',
@@ -47,7 +50,7 @@ const checkList = [{
 }]
 
 function goSearch() {
-  const href = `${checkList[checkActive.value].href}${inputText.value}`
+  const href = `${checkList[configStore.searchActive].href}${inputText.value}`
 
   window.open(href)
 }

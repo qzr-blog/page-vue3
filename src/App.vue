@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-23 14:24:18
+ * @LastEditTime : 2021-12-27 10:41:11
 -->
 
 
@@ -21,10 +21,27 @@ console.log($utils)
 console.log($api)
 console.log('env', import.meta.env)
 
-onMounted(() => {
+function listenResize() {
+  // 监听视口变化
+  window.addEventListener('resize', () => {
+    const width = window.innerWidth
+    const height = window.innerHeight
+
+    console.log('width', width)
+    console.log('height', height)
+  })
+}
+
+function listenUnload() {
+  // 监听退出页面事件
   window.addEventListener('unload', e => {
     $utils.bom.cookie.del('')
   })
+}
+
+onMounted(() => {
+  listenResize()
+  listenUnload()
 })
 </script>
 

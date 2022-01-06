@@ -1,8 +1,8 @@
 Arguments: 
-  D:\programApp\node\node.exe D:\programApp\yarn\bin\yarn.js build
+  D:\programApp\node\node.exe D:\programApp\yarn\bin\yarn.js dev
 
 PATH: 
-  C:\Users\ZHUORA~1\AppData\Local\Temp\yarn--1640159842867-0.2502813774865409;D:\自用\page-cli\node_modules\.bin;C:\Users\zhuoranqiu\AppData\Local\Yarn\Data\link\node_modules\.bin;D:\programApp\libexec\lib\node_modules\npm\bin\node-gyp-bin;D:\programApp\lib\node_modules\npm\bin\node-gyp-bin;D:\programApp\node\node_modules\npm\bin\node-gyp-bin;C:\Users\ZHUORA~1\AppData\Local\Temp\yarn--1640159841556-0.393781668567607;D:\自用\page-cli\node_modules\.bin;C:\Users\zhuoranqiu\AppData\Local\Yarn\Data\link\node_modules\.bin;D:\programApp\libexec\lib\node_modules\npm\bin\node-gyp-bin;D:\programApp\lib\node_modules\npm\bin\node-gyp-bin;D:\programApp\node\node_modules\npm\bin\node-gyp-bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\programApp\nvm\nvm;D:\programApp\node;C:\Users\zhuoranqiu\AppData\Roaming\npm;D:\programApp\WinSCP\;D:\programApp\node;D:\programApp\yarn\bin\;D:\scrcpy;D:\应用\OpenVPN\bin;C;\Program Files\Docker\Docker\resources\bin;C:\Program Files\MongoDB\Server\4.4\bin;C:\Program Files\dotnet\;D:\程序\node\;;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\zhuoranqiu\AppData\Local\Microsoft\WindowsApps;D:\programApp\nvm\nvm;D:\programApp\node;C:\Users\zhuoranqiu\AppData\Local\Yarn\bin;D:\应用\Microsoft VS Code\bin;D:\programApp\Git\cmd;D:\programApp\yarn\bin\;D:\scrcpy;D:\应用\安卓抓包\fiddler;C:\Program Files\MongoDB\Server\4.4\bin;;C:\Users\zhuoranqiu\AppData\Local\Microsoft\WindowsApps;C:\Users\zhuoranqiu\AppData\Roaming\npm
+  C:\Users\ZHUORA~1\AppData\Local\Temp\yarn--1641291390150-0.9110656955775611;D:\自用\page-cli\node_modules\.bin;C:\Users\zhuoranqiu\AppData\Local\Yarn\Data\link\node_modules\.bin;D:\programApp\libexec\lib\node_modules\npm\bin\node-gyp-bin;D:\programApp\lib\node_modules\npm\bin\node-gyp-bin;D:\programApp\node\node_modules\npm\bin\node-gyp-bin;C:\Users\ZHUORA~1\AppData\Local\Temp\yarn--1641291389750-0.1921341691498757;D:\自用\page-cli\node_modules\.bin;C:\Users\zhuoranqiu\AppData\Local\Yarn\Data\link\node_modules\.bin;D:\programApp\libexec\lib\node_modules\npm\bin\node-gyp-bin;D:\programApp\lib\node_modules\npm\bin\node-gyp-bin;D:\programApp\node\node_modules\npm\bin\node-gyp-bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\programApp\nvm\nvm;D:\programApp\node;C:\Users\zhuoranqiu\AppData\Roaming\npm;D:\programApp\WinSCP\;D:\programApp\node;D:\programApp\yarn\bin\;D:\scrcpy;D:\应用\OpenVPN\bin;C;\Program Files\Docker\Docker\resources\bin;C:\Program Files\MongoDB\Server\4.4\bin;C:\Program Files\dotnet\;D:\程序\node\;;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\zhuoranqiu\AppData\Local\Microsoft\WindowsApps;D:\programApp\nvm\nvm;D:\programApp\node;C:\Users\zhuoranqiu\AppData\Local\Yarn\bin;D:\应用\Microsoft VS Code\bin;D:\programApp\Git\cmd;D:\programApp\yarn\bin\;D:\scrcpy;D:\应用\安卓抓包\fiddler;C:\Program Files\MongoDB\Server\4.4\bin;;C:\Users\zhuoranqiu\AppData\Local\Microsoft\WindowsApps;C:\Users\zhuoranqiu\AppData\Roaming\npm
 
 Yarn version: 
   1.22.4
@@ -40,8 +40,9 @@ npm manifest:
       "prepare": "husky install",
       "test": "jest",
       "cz": "git add . && git cz",
-      "docker": "docker image build -t constq/page:v1 .",
-      "docker:dev": "docker-compose -f ./docker/docker-compose-dev.yml up"
+      "docker:dev": "docker-compose -f ./docker/docker-compose-dev.yml up",
+      "docker": "docker build -t page-blog:front-v1 .",
+      "release": "yarn buildProd && docker build -t page-blog:front-v1 ."
     },
     "lint-staged": {
       "*.{vue,js,ts}": "eslint --fix"
@@ -49,6 +50,7 @@ npm manifest:
     "dependencies": {
       "axios": "^0.21.1",
       "element-plus": "^1.2.0-beta.6",
+      "pinia": "^2.0.9",
       "postcss": "^8.3.0",
       "vue": "^3",
       "vue-router": "^4",
@@ -1178,6 +1180,11 @@ Lockfile:
     version "6.0.0-beta.15"
     resolved "https://r.cnpmjs.org/@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.15.tgz#ad7cb384e062f165bcf9c83732125bffbc2ad83d"
     integrity sha1-rXyzhOBi8WW8+cg3MhJb/7wq2D0=
+  
+  "@vue/devtools-api@^6.0.0-beta.21":
+    version "6.0.0-beta.21.1"
+    resolved "https://registry.npmmirror.com/@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.21.1.tgz#f1410f53c42aa67fa3b01ca7bdba891f69d7bc97"
+    integrity sha512-FqC4s3pm35qGVeXRGOjTsRzlkJjrBLriDS9YXbflHLsfA9FrcKzIyWnLXoNm+/7930E8rRakXuAc2QkC50swAw==
   
   "@vue/reactivity@3.2.7":
     version "3.2.7"
@@ -5041,6 +5048,14 @@ Lockfile:
     version "3.0.0"
     resolved "https://r.cnpmjs.org/pify/download/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
     integrity sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=
+  
+  pinia@^2.0.9:
+    version "2.0.9"
+    resolved "https://registry.npmmirror.com/pinia/download/pinia-2.0.9.tgz#7d7767c46e3810fff046c289453242a68fc23492"
+    integrity sha512-iuYdxLJKQ07YPyOHYH05wNG9eKWqkP/4y4GE8+RqEYtz5fwHgPA5kr6zQbg/DoEJGnR2XCm1w1vdt6ppzL9ATg==
+    dependencies:
+      "@vue/devtools-api" "^6.0.0-beta.21"
+      vue-demi "*"
   
   pirates@^4.0.1:
     version "4.0.1"

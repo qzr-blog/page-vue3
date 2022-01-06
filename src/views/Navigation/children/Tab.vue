@@ -3,7 +3,7 @@
  * @Description  : 顶部tab
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-22 15:14:50
+ * @LastEditTime : 2022-01-06 18:01:45
 -->
 
 <template>
@@ -11,18 +11,19 @@
     <div class="tab">
       <div class="tab-box">
         <img src="@/assets/navigation/tab/ic_pickup.png"
-             class="ic-pickup">
+             class="ic-pickup"
+             :class="{'ic-pickup-trans': configStore.hideSide}"
+             @click="hideSide">
         <!-- <div>武汉 晴 8°C 良</div> -->
         <div id="he-plugin-simple" />
         <div>
           <img src="@/assets/navigation/tab/ic_home.png">
           <span>首页</span>
         </div>
-        <div>
+        <div @click="goBlog">
           <img src="@/assets/navigation/tab/ic_blog.png">
-          <span>家园</span>
+          <span>博客</span>
         </div>
-
       </div>
 
       <div class="textInfo">{{ textInfo }}</div>
@@ -34,13 +35,26 @@
   </div>
 </template>
 
-<script lang='ts' setup>
+<script lang="ts" setup>
 import Search from '@/views/Navigation/components/Search.vue'
+
 import { onMounted, inject, ref } from 'vue'
+import { useConfig } from '@/store/config'
+
 import initWeather from '@/utils/weather'
 
-const api:any = inject('$api')
+const api: any = inject('$api')
 const textInfo = ref('')
+
+const configStore = useConfig()
+
+function hideSide() {
+  configStore.hideSide = !configStore.hideSide
+}
+
+function goBlog() {
+  location.href = 'https://www.qzran.cn'
+}
 
 onMounted(async () => {
   initWeather()
@@ -50,7 +64,11 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped lang='stylus'>
+<style scoped lang="stylus">
+$zoom = @block {
+  transition 1s
+}
+
 .tab-container
   position relative
   height 450px
@@ -88,9 +106,13 @@ onMounted(async () => {
       cursor pointer
 
 .ic-pickup
+  {$zoom}
   width 27px
   height 27
   margin-left 30px
+
+.ic-pickup-trans
+  transform:rotateY(180deg)
 
 .search-box
   {$flex}

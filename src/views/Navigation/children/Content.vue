@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-15 16:23:25
+ * @LastEditTime : 2022-01-06 16:17:17
 -->
 
 <template>
@@ -79,6 +79,7 @@ function goUrl(item:any) {
 
 .content
   {$flex}
+  flex auto
   align-items flex-start
   justify-content flex-start
   background white
@@ -107,4 +108,14 @@ function goUrl(item:any) {
   font-size 16px
   margin-bottom 10px
   font-weight bold
+
+@media (max-width: 768px)
+  .desc
+    font-size 14px
+    color #8F8F8F
+    display -webkit-box
+    overflow hidden
+    -webkit-box-orient vertical //子元素应该被水平或垂直排列
+    -webkit-line-clamp 2  //3行后显示省略号
+
 </style>

@@ -18,7 +18,7 @@ const option:any = {
   },
 }
 
-option.baseURL = '/api'
+option.baseURL = import.meta.env.HOST
 
 const Axios = axios.create(option)
 

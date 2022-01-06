@@ -1,7 +1,13 @@
 import qinglong from '@/assets/logo/docker/qinglong.png'
 import iyuu from '@/assets/logo/docker/iyuu.png'
+import jellyfin from '@/assets/logo/often/jellyfin.png'
 
 const index = [{
+  name: 'Jellyfin',
+  url: 'https://router.qzran.cn:8001/web/index.html',
+  img: jellyfin,
+  desc: '一个自由软件媒体系统，控制媒体管理和流媒体'
+}, {
   name: '自动签到',
   url: 'https://router.qzran.cn:8005/',
   alias: 'qiandao',

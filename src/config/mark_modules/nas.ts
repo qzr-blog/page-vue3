@@ -15,6 +15,11 @@ import vmm from '@/assets/logo/nas/vmm.png'
 import { NASURL } from '@/config/constant'
 
 const index = [{
+  name: 'DSM',
+  url: NASURL,
+  alias: 'Synology',
+  desc: '群晖控制台'
+}, {
   name: '音乐',
   alias: 'audio',
   img: audio,
