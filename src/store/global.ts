@@ -17,7 +17,5 @@ export const useGlobal = defineStore({
     getEnv(state: typeof globalState) {
       return state.env
     }
-  },
-  actions: {
   }
 })

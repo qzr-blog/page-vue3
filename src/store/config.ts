@@ -7,13 +7,17 @@ const configState = {
 
 export const useConfig = defineStore({
   id: 'config',
-  state() {
-    return configState
-  },
+  state: () => ({
+    hideSide: false,
+    searchActive: 1
+  }),
+  // state() {
+  //   return configState
+  // },
 
-  getters: {
-    getHideSide(state: typeof configState) {
-      return state.hideSide
-    },
-  }
+  // getters: {
+  //   getHideSide(state: typeof configState) {
+  //     return state.hideSide
+  //   },
+  // }
 })

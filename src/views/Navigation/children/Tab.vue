@@ -3,7 +3,7 @@
  * @Description  : 顶部tab
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-06 18:01:45
+ * @LastEditTime : 2022-01-06 18:20:47
 -->
 
 <template>
@@ -20,7 +20,7 @@
           <img src="@/assets/navigation/tab/ic_home.png">
           <span>首页</span>
         </div>
-        <div @click="goBlog">
+        <div @click="goUrl('https://www.qzran.cn')">
           <img src="@/assets/navigation/tab/ic_blog.png">
           <span>博客</span>
         </div>
@@ -50,10 +50,6 @@ const configStore = useConfig()
 
 function hideSide() {
   configStore.hideSide = !configStore.hideSide
-}
-
-function goBlog() {
-  location.href = 'https://www.qzran.cn'
 }
 
 onMounted(async () => {

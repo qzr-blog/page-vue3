@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-06 16:17:17
+ * @LastEditTime : 2022-01-06 18:20:24
 -->
 
 <template>
@@ -48,10 +48,6 @@
 <script lang='ts' setup>
 import Icon from '@/views/Navigation/components/Icon.vue'
 import { markMap } from '@/config/markMap'
-
-function goUrl(item:any) {
-  window.open(item.url)
-}
 </script>
 
 <style scoped lang='stylus'>

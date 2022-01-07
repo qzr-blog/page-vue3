@@ -5,3 +5,6 @@ declare module '*.vue' {
 }
 
 declare module '@constq/qzr-utils'
+
+declare let goUrl:any
+
