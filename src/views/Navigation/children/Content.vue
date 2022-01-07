@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-06 18:20:24
+ * @LastEditTime : 2022-01-07 15:07:25
 -->
 
 <template>
@@ -51,6 +51,16 @@ import { markMap } from '@/config/markMap'
 </script>
 
 <style scoped lang='stylus'>
+@keyframes hoverContent {
+  from {
+    transform translateY(0px)
+  }
+  to {
+    transform translateY(-6px)
+    box-shadow 0 26px 40px -24px rgb(0 36 100 / 30%)
+  }
+}
+
 .content-container
   background #f9f9f9
   min-height calc(100vh - 450px - 35px - 35px)
@@ -89,7 +99,8 @@ import { markMap } from '@/config/markMap'
   cursor pointer
   .content-icon
     margin-right 15px
-
+  &:hover
+    animation hoverContent .3s ease forwards
 
 .desc
   font-size 14px

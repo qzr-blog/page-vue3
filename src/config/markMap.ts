@@ -24,17 +24,17 @@ const markMap: mark[] = [
     content: often
   },
   {
+    title: 'Docker',
+    alias: 'docker',
+    fine: 'Docker',
+    content: docker
+  },
+  {
     title: 'Nas',
     alias: 'nas',
     fine: 'synology',
     content: nas
   },
-  {
-    title: 'Docker',
-    alias: 'docker',
-    fine: 'Docker',
-    content: docker
-  }
 ]
 
 export { markMap }
