@@ -18,7 +18,7 @@ const option:any = {
   },
 }
 
-option.baseURL = import.meta.env.HOST
+option.baseURL = import.meta.env.VITE_HOST
 
 const Axios = axios.create(option)
 

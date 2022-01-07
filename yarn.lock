@@ -504,10 +504,10 @@
   resolved "https://registry.npmmirror.com/@constq/eslint-config-qzr/download/@constq/eslint-config-qzr-0.0.3.tgz#36f18b62a9fd8689c8cfee00f971b6d7b439fa71"
   integrity sha1-NvGLYqn9honIz+4A+XG217Q5+nE=
 
-"@constq/qzr-utils@1.1.16":
-  version "1.1.16"
-  resolved "https://registry.npmmirror.com/@constq/qzr-utils/download/@constq/qzr-utils-1.1.16.tgz#55a9b7b463414c5e7207a5cc6be920d3ab49122d"
-  integrity sha512-CWxS7brGgp3YPRkHNua8ZCTmUe2lU8G372lUJiIAdRTlz7wyQqt71/bwiWI02iFyryaI+VxzqqAgABXK51jqTg==
+"@constq/qzr-utils@1.1.17":
+  version "1.1.17"
+  resolved "https://registry.npmmirror.com/@constq/qzr-utils/download/@constq/qzr-utils-1.1.17.tgz#b0fd4c69d1ee4addae27f44fe7d11f6b485c491d"
+  integrity sha512-jk3IZKcvopBZd5orJGtP4/QASRcwxx9FIons+xFKPiJjhekdHWs1RwKjH9+vnI7gOTqLMHC7o8qZTSYTvK3qug==
 
 "@cspotcode/source-map-consumer@0.8.0":
   version "0.8.0"

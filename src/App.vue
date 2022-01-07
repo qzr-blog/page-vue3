@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-27 10:41:11
+ * @LastEditTime : 2022-01-07 11:34:04
 -->
 
 
@@ -14,6 +14,8 @@
 <script lang="ts" setup>
 import { inject, onMounted } from 'vue'
 
+import { preFun, preDom } from '@/utils/preFun'
+
 const $api = inject('$api')
 const $utils:any = inject('$utils')
 
@@ -21,27 +23,10 @@ console.log($utils)
 console.log($api)
 console.log('env', import.meta.env)
 
-function listenResize() {
-  // 监听视口变化
-  window.addEventListener('resize', () => {
-    const width = window.innerWidth
-    const height = window.innerHeight
-
-    console.log('width', width)
-    console.log('height', height)
-  })
-}
-
-function listenUnload() {
-  // 监听退出页面事件
-  window.addEventListener('unload', e => {
-    $utils.bom.cookie.del('')
-  })
-}
 
 onMounted(() => {
-  listenResize()
-  listenUnload()
+  preFun()
+  preDom()
 })
 </script>
 
