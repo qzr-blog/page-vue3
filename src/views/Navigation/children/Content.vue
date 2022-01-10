@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-07 15:07:25
+ * @LastEditTime : 2022-01-10 14:47:11
 -->
 
 <template>
@@ -79,23 +79,35 @@ import { markMap } from '@/config/markMap'
     font-size 18px
 
 .content-box
-  {$flex}
-  justify-content flex-start
-  flex-wrap wrap
+  // {$flex}
+  // justify-content flex-start
+  // flex-wrap wrap
+  display grid
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+  // grid-template-rows: repeat(auto-fill, 130px)
+  grid-column-gap: 30px;
+  grid-row-gap: 36px;
+  justify-items: center;
+  align-items center
+  justify-content stretch
+  align-content stretch
+  width 100%
 
 .content
+  display inline-grid
+  justify-self stretch
   {$flex}
   flex auto
   align-items flex-start
   justify-content flex-start
   background white
-  width 210px
+  // width 210px
   height 65px
   padding 15px 30px
   border-radius 8px
   box-shadow: 0px 2px 5px rgba(153, 153, 153, 0.16)
-  margin-right 36px
-  margin-bottom 36px
+  // margin-right 36px
+  // margin-bottom 36px
   cursor pointer
   .content-icon
     margin-right 15px

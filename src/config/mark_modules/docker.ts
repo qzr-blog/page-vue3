@@ -69,8 +69,8 @@ const index = [{
   alias: 'jd',
   desc: '京东自动签到v3'
 }, {
-  name: 'airsonic',
-  url: 'https://router.qzran.cn:8022/',
+  name: 'navidrome',
+  url: 'https://router.qzran.cn:8028/',
   alias: 'airsonic',
   desc: '音乐播放器'
 }, {
