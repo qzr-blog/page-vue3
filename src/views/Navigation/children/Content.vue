@@ -3,12 +3,12 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-10 14:47:11
+ * @LastEditTime : 2022-01-12 14:30:04
 -->
 
 <template>
   <div class="content-container">
-    <div>
+    <div class="bookmarks">
       <div v-for="(marks, index) of markMap"
            :id="marks.alias"
            :key="index"
@@ -27,7 +27,7 @@
           <div v-for="(item, idx) of marks.content"
                :key="idx"
                class="content"
-               @click="goUrl(item)">
+               @click="goUrl(item.url)">
             <div class="content-icon">
               <Icon :info="item"
                     :fine="true"
@@ -38,16 +38,22 @@
               <div class="desc">{{ item.desc }}</div>
             </div>
           </div>
+
         </div>
 
       </div>
+
     </div>
+
+    <Crawler />
   </div>
 </template>
 
 <script lang='ts' setup>
+import { inject, onMounted, ref } from 'vue'
 import Icon from '@/views/Navigation/components/Icon.vue'
 import { markMap } from '@/config/markMap'
+import Crawler from '../components/Crawler.vue'
 </script>
 
 <style scoped lang='stylus'>
@@ -62,9 +68,15 @@ import { markMap } from '@/config/markMap'
 }
 
 .content-container
+  {$flex}
+  align-items flex-start
   background #f9f9f9
   min-height calc(100vh - 450px - 35px - 35px)
-  padding 35px 30px
+  padding 35px 20px
+
+.bookmarks
+  flex 1
+  padding-right 20px
 
 .mark-box
   margin-bottom 64px

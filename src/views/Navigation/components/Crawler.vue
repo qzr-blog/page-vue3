@@ -1,0 +1,111 @@
+<!--
+ * @Date         : 2022-01-12 11:13:15
+ * @Description  : 爬虫
+ * @Autor        : Qzr(z5021996@vip.qq.com)
+ * @LastEditors  : Qzr(z5021996@vip.qq.com)
+ * @LastEditTime : 2022-01-12 17:14:14
+-->
+
+<template>
+  <div>
+    <div class="crawler-container">
+      <transition-group name="container">
+        <div v-for="(it, index) of crawler"
+             :key="index"
+             class="crawler-box">
+
+          <div class="title">{{ it.title }}</div>
+          <div v-for="(item, idx) of it.content"
+               v-show="idx < (!it?.hide ? 5 : it.content.length)"
+               :key="idx"
+               class="content"
+               @click="goUrl(item.url)">
+            <div class="main-box">
+              <img :src="item.img">
+              <div class="main">
+                <div class="name">{{ item.title }}</div>
+                <div class="price">{{ item.price }}</div>
+              </div>
+            </div>
+            <div class="attr">
+              <div>值{{ item.chance }}%</div>
+              <div>收藏{{ item.collcet }}</div>
+              <div>评论{{ item.comment }}</div>
+            </div>
+          </div>
+
+          <div @click="changeHide(index)">{{ crawler[index].hide ? '收起' : '更多' }}</div>
+
+        </div>
+      </transition-group>
+    </div>
+  </div>
+</template>
+
+<script lang='ts' setup>
+import { inject, onMounted, ref } from 'vue'
+
+const api:any = inject('$api')
+
+const crawler = ref([])
+
+async function getSmzdm() {
+  const res = await api.getSmzdm()
+  crawler.value = res
+  return res
+}
+
+function changeHide(index) {
+  crawler.value[index].hide = !crawler.value[index]?.hide
+}
+
+onMounted(() => {
+  getSmzdm()
+})
+</script>
+
+<style scoped lang='stylus'>
+.crawler-container
+  width 200px
+
+.crawler-box
+  padding 10px
+  background white
+  border-radius 5px
+  margin-bottom 20px
+  transition 1s
+
+.content
+  margin 15px 0
+
+.main-box
+  {$flex}
+  img
+    width 50px
+    height 50px
+    margin-right 5px
+  .name
+    font-size 14px
+    color #3c3c3c
+    {$textHideLine2}
+  .price
+    font-size 14px
+    color #e62828
+    width 130px
+    margin-top 5px
+    {$textHideLine1}
+
+.main
+  {$flex}
+  flex-direction column
+  align-items flex-start
+  justify-content space-between
+
+.attr
+  {$flex}
+  justify-content space-between
+  margin-top 5px
+  div
+    font-size 12px
+
+</style>
