@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-07 11:34:04
+ * @LastEditTime : 2022-01-13 18:30:44
 -->
 
 
@@ -32,5 +32,6 @@ onMounted(() => {
 
 <style lang="stylus">
 body
-	margin 0
+  margin 0
+
 </style>
