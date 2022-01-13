@@ -3,7 +3,7 @@
  * @Description  : 爬虫
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-12 17:14:14
+ * @LastEditTime : 2022-01-13 09:39:15
 -->
 
 <template>
@@ -16,7 +16,7 @@
 
           <div class="title">{{ it.title }}</div>
           <div v-for="(item, idx) of it.content"
-               v-show="idx < (!it?.hide ? 5 : it.content.length)"
+               v-show="setShow(idx, it)"
                :key="idx"
                class="content"
                @click="goUrl(item.url)">
@@ -47,7 +47,7 @@ import { inject, onMounted, ref } from 'vue'
 
 const api:any = inject('$api')
 
-const crawler = ref([])
+const crawler:any = ref([])
 
 async function getSmzdm() {
   const res = await api.getSmzdm()
@@ -57,6 +57,10 @@ async function getSmzdm() {
 
 function changeHide(index) {
   crawler.value[index].hide = !crawler.value[index]?.hide
+}
+
+function setShow(idx, it) {
+  return idx < (!it?.hide ? 5 : it.content.length)
 }
 
 onMounted(() => {
