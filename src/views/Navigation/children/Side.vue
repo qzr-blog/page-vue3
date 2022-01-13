@@ -3,7 +3,7 @@
  * @Description  : 侧面栏
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-12 11:12:39
+ * @LastEditTime : 2022-01-13 15:56:17
 -->
 
 <template>
@@ -83,7 +83,7 @@ $zoom = @block {
   flex-direction column
   align-items flex-start
   > div
-    padding 20px 40px
+    padding 20px 0
     {$flex}
     box-sizing border-box
     position relative
@@ -97,9 +97,8 @@ $zoom = @block {
     span
       font-size 16px
       color #898A8A
+      margin-left 20px
 
-.icon-box
-  margin-right 20px
 
 .avatar
   {$zoom}

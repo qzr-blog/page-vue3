@@ -3,7 +3,7 @@
  * @Description  : 爬虫
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-13 09:39:15
+ * @LastEditTime : 2022-01-13 15:40:36
 -->
 
 <template>
@@ -20,21 +20,40 @@
                :key="idx"
                class="content"
                @click="goUrl(item.url)">
-            <div class="main-box">
-              <img :src="item.img">
-              <div class="main">
-                <div class="name">{{ item.title }}</div>
-                <div class="price">{{ item.price }}</div>
+
+            <el-tooltip
+              effect="dark"
+              :content="item.title"
+              placement="left">
+              <div>
+                <div class="main-box">
+                  <img :src="item.img">
+                  <div class="main">
+                    <div class="name">{{ item.title }}</div>
+                    <div class="price">{{ item.price }}</div>
+                  </div>
+                </div>
+
+                <div v-if="item.chance"
+                     class="attrinfo">
+                  <div>值{{ item.chance }}%({{ item.up }}:{{ item.down }})</div>
+                  <div>收藏{{ item.collcet }}</div>
+                  <div>评论{{ item.comment }}</div>
+                </div>
+
+                <div v-else
+                     class="attrinfo">
+                  <div>值{{ item.up }}</div>
+                  <div>评论{{ item.comment }}</div>
+                </div>
               </div>
-            </div>
-            <div class="attr">
-              <div>值{{ item.chance }}%</div>
-              <div>收藏{{ item.collcet }}</div>
-              <div>评论{{ item.comment }}</div>
-            </div>
+            </el-tooltip>
+
           </div>
 
-          <div @click="changeHide(index)">{{ crawler[index].hide ? '收起' : '更多' }}</div>
+          <div v-if="it.content.length >= 5"
+               class="more"
+               @click="changeHide(index)">{{ crawler[index].hide ? '收起' : '更多' }}</div>
 
         </div>
       </transition-group>
@@ -78,6 +97,7 @@ onMounted(() => {
   border-radius 5px
   margin-bottom 20px
   transition 1s
+  cursor pointer
 
 .content
   margin 15px 0
@@ -105,11 +125,15 @@ onMounted(() => {
   align-items flex-start
   justify-content space-between
 
-.attr
+.attrinfo
   {$flex}
   justify-content space-between
   margin-top 5px
   div
     font-size 12px
 
+.more
+  text-align center
+  color #8f8f8f
+  font-size 12px
 </style>

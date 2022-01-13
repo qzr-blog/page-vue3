@@ -3,7 +3,7 @@
  * @Description  : 导航页
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-24 16:08:11
+ * @LastEditTime : 2022-01-13 15:04:48
 -->
 
 <template>
@@ -13,6 +13,8 @@
       <Tab />
       <Content />
     </div>
+
+    <el-backtop />
   </div>
 </template>
 
