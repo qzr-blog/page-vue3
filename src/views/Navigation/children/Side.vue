@@ -3,7 +3,7 @@
  * @Description  : 侧面栏
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-13 15:56:17
+ * @LastEditTime : 2022-01-18 16:00:16
 -->
 
 <template>
@@ -28,19 +28,26 @@
           <span v-show="!configStore.hideSide">{{ item.title }}</span>
         </div>
       </div>
+
+      <div @click="showRegister = true">注册</div>
     </div>
+
   </div>
+
+  <Register v-model:show="showRegister" />
 </template>
 
 <script lang="ts" setup>
-import { inject } from 'vue'
+import { inject, ref } from 'vue'
 import { useConfig } from '@/store/config'
 
 import { markMap } from '@/config/markMap'
 
 import avatar from '@/assets/logo.jpg'
 import Icon from '@/views/Navigation/components/Icon.vue'
+import Register from '../components/Register.vue'
 
+const showRegister = ref(true)
 const content = markMap
 const configStore = useConfig()
 

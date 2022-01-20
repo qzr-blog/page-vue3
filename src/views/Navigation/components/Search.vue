@@ -3,7 +3,7 @@
  * @Description  : 搜索框控件
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-16 10:09:27
+ * @LastEditTime : 2022-01-17 11:32:15
 -->
 
 <template>
@@ -47,6 +47,9 @@ const checkList = [{
 }, {
   name: '谷歌',
   href: 'https://www.google.com/search?q='
+}, {
+  name: 'smzdm',
+  href: 'https://search.smzdm.com/?&=b&s='
 }]
 
 function goSearch() {

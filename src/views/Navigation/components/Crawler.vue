@@ -3,7 +3,7 @@
  * @Description  : 爬虫
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-13 15:40:36
+ * @LastEditTime : 2022-01-18 15:49:23
 -->
 
 <template>
@@ -89,10 +89,10 @@ onMounted(() => {
 
 <style scoped lang='stylus'>
 .crawler-container
-  width 200px
+  width 250px
 
 .crawler-box
-  padding 10px
+  padding 15px
   background white
   border-radius 5px
   margin-bottom 20px

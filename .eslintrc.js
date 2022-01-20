@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-12-20 18:30:44
+ * @LastEditTime : 2022-01-18 16:06:33
  */
 
 module.exports = {
@@ -12,6 +12,10 @@ module.exports = {
     es2021: true,
     node: true,
     'jest/globals': true
+  },
+  globals: {
+    defineProps: true,
+    defineEmits: true
   },
   extends: [
     'plugin:vue/vue3-recommended',

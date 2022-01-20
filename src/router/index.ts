@@ -4,17 +4,19 @@ import {
   RouteRecordRaw,
 } from 'vue-router'
 
-import Home from '@/views/Home/index.vue'
+import { defineAsyncComponent } from 'vue'
 import Navigation from '@/views/Navigation/index.vue'
 
+const _import = (path) => defineAsyncComponent(() => import(`../views/${path}/index.vue`))
+
 const routes: Array<RouteRecordRaw> = [
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: Home,
-  // },
   {
-    path: '/navigation',
+    path: '/home',
+    name: 'Home',
+    component: _import('Home'),
+  },
+  {
+    path: '/',
     name: 'Navigation',
     component: Navigation,
   }, {
