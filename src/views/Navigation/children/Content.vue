@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-12 14:30:04
+ * @LastEditTime : 2022-01-21 10:24:56
 -->
 
 <template>
@@ -50,7 +50,6 @@
 </template>
 
 <script lang='ts' setup>
-import { inject, onMounted, ref } from 'vue'
 import Icon from '@/views/Navigation/components/Icon.vue'
 import { markMap } from '@/config/markMap'
 import Crawler from '../components/Crawler.vue'

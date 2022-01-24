@@ -3,7 +3,7 @@
  * @Description  : 注册模块
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-18 16:02:49
+ * @LastEditTime : 2022-01-21 10:13:42
 -->
 
 
@@ -38,8 +38,6 @@
 </template>
 
 <script lang='ts' setup>
-import { ref, reactive } from 'vue'
-
 defineProps({
   show: Boolean
 })

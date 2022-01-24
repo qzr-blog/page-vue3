@@ -1,4 +1,4 @@
-import axios from './axios'
+import { axiosObj as axios } from './axios'
 
 export default {
   getHitokoto: axios.get('/plugin/hitokoto'),

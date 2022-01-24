@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-18 16:06:33
+ * @LastEditTime : 2022-01-21 10:23:20
  */
 
 module.exports = {
@@ -24,7 +24,8 @@ module.exports = {
     '@constq/eslint-config-qzr/index',
     '@constq/eslint-config-qzr/vue',
     '@constq/eslint-config-qzr/typescript',
-    'plugin:jest/recommended'
+    'plugin:jest/recommended',
+    'vue-global-api'
   ],
   parserOptions: {
     ecmaVersion: 12,
