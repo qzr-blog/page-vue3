@@ -3,7 +3,7 @@
  * @Description  : 爬虫
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-02-07 14:48:56
+ * @LastEditTime : 2022-02-08 18:28:37
 -->
 
 <template>
@@ -51,9 +51,9 @@
 
           </div>
 
-          <!-- <div v-if="it.content.length >= 5"
+          <div v-if="it.content.length >= 5"
                class="more"
-               @click="changeHide(index)">{{ crawler[index].hide ? '收起' : '更多' }}</div> -->
+               @click="changeHide(index)">{{ crawler[index].hide ? '收起' : '更多' }}</div>
 
         </div>
       </transition-group>
