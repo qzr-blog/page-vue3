@@ -10,6 +10,7 @@ import axios from 'axios'
 import jsonpAdapter from 'axios-jsonp'
 import axiosRetry from 'axios-retry'
 import qs from 'qs'
+import { ElMessage } from 'element-plus'
 
 interface CustomOpt {
   reductData: boolean  // 是否直接返回数据
@@ -87,10 +88,9 @@ function axiosFn(customParam?: CustomOpt) {
       return reductData ? res.data[reductId] : res.data
     },
     (error) => {
-
       httpErrorStatusHandle(error)
-
-      return Promise.reject(error.response)
+      throw Error(error.response.data.message)
+      // return Promise.reject(error.response)
     }
   )
 
@@ -143,11 +143,7 @@ function httpErrorStatusHandle(error:any) {
   console.log(error.response)
   console.error(`${error.response.status}：${error.response.statusText}`)
   console.error(message)
-  // throw Error(message)
-  // ElMessage({
-  //   type: 'error',
-  //   message
-  // })
+  ElMessage.error(error.response.data.message)
 }
 
 const axiosObj = axiosFn()

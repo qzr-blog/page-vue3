@@ -14,15 +14,18 @@ const routes: Array<RouteRecordRaw> = [
     path: '/home',
     name: 'Home',
     component: _import('Home'),
-  },
-  {
+  }, {
     path: '/',
     name: 'Navigation',
     component: Navigation,
   }, {
     path: '/:catchAll(.*)',
     component: Navigation,
-  },
+  }, {
+    path: '/back',
+    name: 'Back',
+    component: _import('Back')
+  }
 ]
 
 const router = createRouter({

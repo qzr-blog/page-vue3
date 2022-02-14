@@ -1,9 +1,17 @@
 <!--
+ * @Date         : 2022-02-09 18:27:06
+ * @Description  : 侧边栏
+ * @Autor        : Qzr(z5021996@vip.qq.com)
+ * @LastEditors  : Qzr(z5021996@vip.qq.com)
+ * @LastEditTime : 2022-02-14 16:19:28
+-->
+
+<!--
  * @Date         : 2021-11-26 17:31:30
  * @Description  : 侧面栏
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-02-14 14:38:07
+ * @LastEditTime : 2022-02-09 18:24:12
 -->
 
 <template>
@@ -18,7 +26,8 @@
              class="avatar"
              @click="goBack">
       </div>
-      <div class="content">
+
+      <!-- <div class="content">
         <div v-for="(item, index) of content"
              :key="index"
              @click="goHref(item.alias)">
@@ -28,14 +37,11 @@
           </div>
           <span v-show="!configStore.hideSide">{{ item.title }}</span>
         </div>
-      </div>
-
-      <div @click="showLogin = true">登录</div>
+      </div> -->
     </div>
 
   </div>
 
-  <Login v-model:show="showLogin" />
 </template>
 
 <script lang="ts" setup>
@@ -43,28 +49,9 @@ import { inject, ref } from 'vue'
 import { useConfig } from '@/store/config'
 import { useRouter } from 'vue-router'
 
-import { markMap } from '@/config/markMap'
-
 import avatar from '@/assets/logo.jpg'
 import Icon from '@/views/Navigation/components/Icon.vue'
-import Login from '@/components/login/Login.vue'
 
-
-const router = useRouter()
-
-const showLogin = ref(false)
-const content = markMap
-const configStore = useConfig()
-
-function goHref(href:string) {
-  window.document.querySelector(`#${href}`)?.scrollIntoView({
-    behavior: 'smooth', // 定义动画过渡效果， "auto"或 "smooth" 之一。默认为 "auto"
-  })
-}
-
-function goBack() {
-  router.push('/back')
-}
 </script>
 
 <style scoped lang="stylus">
