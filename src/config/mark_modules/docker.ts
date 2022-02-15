@@ -89,6 +89,11 @@ const index = [{
   alias: 'music',
   desc: '各种脚本运行平台，包含京东签到',
   img: qinglong
+}, {
+  name: 'chesesubfinder',
+  url: 'https://router.qzran.cn:8029/',
+  alias: 'chesesubfinder',
+  desc: '自动下载中文字幕'
 }]
 
 export default index
