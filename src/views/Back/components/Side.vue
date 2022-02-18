@@ -3,7 +3,7 @@
  * @Description  : 侧边栏
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-02-14 16:19:28
+ * @LastEditTime : 2022-02-18 23:26:03
 -->
 
 <!--
@@ -15,19 +15,20 @@
 -->
 
 <template>
-  <div :class="{'hide-trans': configStore.hideSide}">
+  <div>test</div>
+  <!-- <div :class="{'hide-trans': configStore.hideSide}">
     <div class="placeholder" />
     <div class="side-container">
       <div class="avatar-box">
-        <!-- <el-avatar
+        <el-avatar
           :src="avatar"
-          :size="150" /> -->
+          :size="150" />
         <img :src="avatar"
              class="avatar"
              @click="goBack">
       </div>
 
-      <!-- <div class="content">
+      <div class="content">
         <div v-for="(item, index) of content"
              :key="index"
              @click="goHref(item.alias)">
@@ -37,20 +38,20 @@
           </div>
           <span v-show="!configStore.hideSide">{{ item.title }}</span>
         </div>
-      </div> -->
+      </div>
     </div>
 
-  </div>
+  </div> -->
 
 </template>
 
 <script lang="ts" setup>
-import { inject, ref } from 'vue'
-import { useConfig } from '@/store/config'
-import { useRouter } from 'vue-router'
+// import { inject, ref } from 'vue'
+// import { useConfig } from '@/store/config'
+// import { useRouter } from 'vue-router'
 
-import avatar from '@/assets/logo.jpg'
-import Icon from '@/views/Navigation/components/Icon.vue'
+// import avatar from '@/assets/logo.jpg'
+// import Icon from '@/views/Navigation/components/Icon.vue'
 
 </script>
 
