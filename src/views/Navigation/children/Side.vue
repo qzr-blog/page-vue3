@@ -3,7 +3,7 @@
  * @Description  : 侧面栏
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-02-14 14:38:07
+ * @LastEditTime : 2022-03-01 14:52:06
 -->
 
 <template>
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div @click="showLogin = true">登录</div>
+      <div @click="showLogin = true">登录1</div>
     </div>
 
   </div>
