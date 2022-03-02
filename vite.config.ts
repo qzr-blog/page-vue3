@@ -21,13 +21,13 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),
-    visualizer({
-      filename: './node_modules/.cache/visualizer/stats.html',
-      open: true,
-      gzipSize: true,
-      brotliSize: true,
-    }),
-    viteCompression()
+    // visualizer({
+    //   filename: './node_modules/.cache/visualizer/stats.html',
+    //   open: true,
+    //   gzipSize: true,
+    //   brotliSize: true,
+    // }),
+    // viteCompression()
   ],
   resolve: {
     alias: {
