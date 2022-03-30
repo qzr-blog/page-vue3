@@ -61,7 +61,7 @@
     "ts-jest": "^26.5.5",
     "unplugin-auto-import": "^0.5.3",
     "unplugin-vue-components": "^0.17.9",
-    "vite": "latest",
+    "vite": "2.5.10",
     "vite-plugin-compression": "^0.4.0",
     "vue-global-api": "^0.4.1",
     "vue-jest": "^5.0.0-alpha.7",
