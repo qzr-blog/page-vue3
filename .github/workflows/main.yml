@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: install
-        run: pnpm i
+        run: yarn
         
       - name: build
-        run: pnpm build
+        run: yarn build
