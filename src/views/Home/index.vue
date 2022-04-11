@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2021-11-30 18:01:21
+ * @LastEditTime : 2022-04-11 09:51:22
 -->
 
 <template>
@@ -19,7 +19,8 @@ import testImg from '@/assets/test.png'
 const test = ref('Home')
 </script>
 
-<style scoped lang='stylus'>
-img
-  width 100vw
+<style scoped lang='scss'>
+img {
+  width: 100vw;
+}
 </style>

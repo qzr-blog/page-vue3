@@ -49,11 +49,14 @@ export default defineConfig({
   },
   css: {
     preprocessorOptions: {
-      stylus: {
-        // additionalData: `@import "${pathSrc}/styles/index.styl";`,
-        imports: [resolve(__dirname, 'src/style/index')],
-        charset: false
+      scss: {
+        additionalData: `@import "src/style/index.scss";`,
       },
+      // stylus: {
+      //   // additionalData: `@import "${pathSrc}/styles/index.styl";`,
+      //   imports: [resolve(__dirname, 'src/style/index')],
+      //   charset: false
+      // },
     }
   }
 })

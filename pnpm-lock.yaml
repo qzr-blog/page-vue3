@@ -29,16 +29,17 @@ specifiers:
   husky: ^6.0.0
   jest: ^26.6.3
   lint-staged: ^10.5.4
-  pinia: 2.0.9
+  pinia: ^2.0.9
   postcss: ^8.3.0
   postcss-px-to-viewport: ^1.1.1
   qs: ^6.10.3
   rollup-plugin-visualizer: ^5.5.4
+  sass: ^1.50.0
   stylus: ^0.54.8
   ts-jest: ^26.5.5
   unplugin-auto-import: ^0.5.3
   unplugin-vue-components: ^0.17.9
-  vite: 2.5.10
+  vite: ^2.5.10
   vite-plugin-compression: ^0.4.0
   vue: ^3
   vue-global-api: ^0.4.1
@@ -52,7 +53,7 @@ dependencies:
   axios-jsonp: 1.0.4
   axios-retry: 3.2.4
   element-plus: 2.1.7_vue@3.2.31
-  pinia: 2.0.9_vue@3.2.31
+  pinia: r2.cnpmjs.org/pinia/2.0.9_vue@3.2.31
   postcss: 8.4.12
   vue: 3.2.31
   vue-router: 4.0.14_vue@3.2.31
@@ -60,7 +61,7 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 15.0.0
   '@commitlint/config-conventional': 13.2.0
-  '@constq/eslint-config-qzr': 0.0.3
+  '@constq/eslint-config-qzr': r2.cnpmjs.org/@constq/eslint-config-qzr/0.0.3
   '@constq/qzr-utils': 1.1.17
   '@types/jest': 26.0.24
   '@types/node': 14.18.12
@@ -84,11 +85,12 @@ devDependencies:
   postcss-px-to-viewport: 1.1.1
   qs: 6.10.3
   rollup-plugin-visualizer: 5.6.0
+  sass: 1.50.0
   stylus: 0.54.8
   ts-jest: 26.5.6_jest@26.6.3
   unplugin-auto-import: 0.5.11_@vueuse+core@7.7.1+vite@2.5.10
   unplugin-vue-components: 0.17.21_vite@2.5.10+vue@3.2.31
-  vite: 2.5.10
+  vite: r2.cnpmjs.org/vite/2.5.10
   vite-plugin-compression: 0.4.0_vite@2.5.10
   vue-global-api: 0.4.1_vue@3.2.31
   vue-jest: 5.0.0-alpha.10_7d8ee8167ef5de44061cfece25184728
@@ -656,10 +658,6 @@ packages:
     dev: true
     optional: true
 
-  /@constq/eslint-config-qzr/0.0.3:
-    resolution: {integrity: sha512-m5vCTuvbYe6I3YYJ2zSjIcbYCqt1iaFZATMXNJc2hSwPaN5ADa+yG6w9pY5/5MCDndlHz7+qfP5QFVHp/FKvig==}
-    dev: true
-
   /@constq/qzr-utils/1.1.17:
     resolution: {integrity: sha512-jk3IZKcvopBZd5orJGtP4/QASRcwxx9FIons+xFKPiJjhekdHWs1RwKjH9+vnI7gOTqLMHC7o8qZTSYTvK3qug==}
     dev: true
@@ -892,7 +890,7 @@ packages:
       terminal-link: 2.1.1
       v8-to-istanbul: 7.1.2
     optionalDependencies:
-      node-notifier: 8.0.2
+      node-notifier: r2.cnpmjs.org/node-notifier/8.0.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1285,7 +1283,7 @@ packages:
     peerDependencies:
       vite: ^2.5.10
     dependencies:
-      vite: 2.5.10
+      vite: r2.cnpmjs.org/vite/2.5.10
     dev: true
 
   /@volar/code-gen/0.31.4:
@@ -1499,7 +1497,7 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.31
-      vue-demi: 0.12.4_vue@3.2.31
+      vue-demi: 0.12.5_vue@3.2.31
     dev: false
 
   /JSONStream/1.3.5:
@@ -2040,7 +2038,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: r2.cnpmjs.org/fsevents/2.3.2
     dev: true
 
   /ci-info/2.0.0:
@@ -2708,12 +2706,6 @@ packages:
       is-symbol: 1.0.4
     dev: true
 
-  /esbuild/0.12.29:
-    resolution: {integrity: sha512-w/XuoBCSwepyiZtIRsKsetiLDUVGPVw1E/R3VTFSecIy8UR7Cq3SOtwKHJMFoVqqVG36aGkzh4e8BvpO1Fdc7g==}
-    hasBin: true
-    requiresBuild: true
-    dev: true
-
   /escalade/3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
     engines: {node: '>=6'}
@@ -2748,7 +2740,7 @@ packages:
       esutils: 2.0.3
       optionator: 0.8.3
     optionalDependencies:
-      source-map: 0.6.1
+      source-map: r2.cnpmjs.org/source-map/0.6.1
     dev: true
 
   /eslint-config-vue-global-api/0.4.1:
@@ -3275,14 +3267,6 @@ packages:
   /fs.realpath/1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
-
-  /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
 
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
@@ -4200,7 +4184,7 @@ packages:
       sane: 4.1.0
       walker: 1.0.8
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: r2.cnpmjs.org/fsevents/2.3.2
     dev: true
 
   /jest-jasmine2/26.6.3:
@@ -5019,19 +5003,6 @@ packages:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
     dev: true
 
-  /node-notifier/8.0.2:
-    resolution: {integrity: sha512-oJP/9NAdd9+x2Q+rfphB2RJCHjod70RcRLjosiPMMu5gjIfwVnOUGq2nbTjTUbmy0DJ/tFIVT30+Qe3nzl4TJg==}
-    requiresBuild: true
-    dependencies:
-      growly: 1.3.0
-      is-wsl: 2.2.0
-      semver: 7.3.5
-      shellwords: 0.1.1
-      uuid: 8.3.2
-      which: 2.0.2
-    dev: true
-    optional: true
-
   /node-releases/2.0.2:
     resolution: {integrity: sha512-XxYDdcQ6eKqp/YjI+tb2C5WM2LgjnZrfYg4vgQt49EK268b6gYCHsBLrK2qvJo4FmCtqmKezb0WZFK4fkrZNsg==}
     dev: true
@@ -5349,23 +5320,6 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
     dev: true
-
-  /pinia/2.0.9_vue@3.2.31:
-    resolution: {integrity: sha512-iuYdxLJKQ07YPyOHYH05wNG9eKWqkP/4y4GE8+RqEYtz5fwHgPA5kr6zQbg/DoEJGnR2XCm1w1vdt6ppzL9ATg==}
-    peerDependencies:
-      '@vue/composition-api': ^1.4.0
-      typescript: '>=4.4.4'
-      vue: ^2.6.14 || ^3.2.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      '@vue/devtools-api': 6.1.3
-      vue: 3.2.31
-      vue-demi: 0.12.4_vue@3.2.31
-    dev: false
 
   /pirates/4.0.5:
     resolution: {integrity: sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==}
@@ -5772,7 +5726,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: r2.cnpmjs.org/fsevents/2.3.2
     dev: true
 
   /rsvp/4.8.5:
@@ -5837,6 +5791,16 @@ packages:
       micromatch: 3.1.10
       minimist: 1.2.6
       walker: 1.0.8
+    dev: true
+
+  /sass/1.50.0:
+    resolution: {integrity: sha512-cLsD6MEZ5URXHStxApajEh7gW189kkjn4Rc8DQweMyF+o5HF5nfEz8QYLMlPsTOD88DknatTmBWkOcw5/LnJLQ==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: r2.cnpmjs.org/immutable/4.0.0
+      source-map-js: 1.0.2
     dev: true
 
   /sax/1.2.4:
@@ -6647,7 +6611,7 @@ packages:
       webpack:
         optional: true
     dependencies:
-      vite: 2.5.10
+      vite: r2.cnpmjs.org/vite/2.5.10
       webpack-virtual-modules: 0.4.3
     dev: true
 
@@ -6730,22 +6694,9 @@ packages:
       chalk: 4.1.2
       debug: 4.3.4
       fs-extra: 10.0.1
-      vite: 2.5.10
+      vite: r2.cnpmjs.org/vite/2.5.10
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /vite/2.5.10:
-    resolution: {integrity: sha512-0ObiHTi5AHyXdJcvZ67HMsDgVpjT5RehvVKv6+Q0jFZ7zDI28PF5zK9mYz2avxdA+4iJMdwCz6wnGNnn4WX5Gg==}
-    engines: {node: '>=12.2.0'}
-    hasBin: true
-    dependencies:
-      esbuild: 0.12.29
-      postcss: 8.4.12
-      resolve: 1.22.0
-      rollup: 2.70.1
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: true
 
   /void-elements/3.1.0:
@@ -6879,6 +6830,21 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.31
+    dev: false
+
+  /vue-demi/0.12.5_vue@3.2.31:
+    resolution: {integrity: sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.31
 
   /vue-eslint-parser/7.11.0_eslint@7.32.0:
     resolution: {integrity: sha512-qh3VhDLeh773wjgNTl7ss0VejY9bMMa0GoDG2fQVyDzRFdiU3L7fw74tWZDHNQXdZqxO3EveQroa9ct39D2nqg==}
@@ -6902,7 +6868,7 @@ packages:
     resolution: {integrity: sha512-283vpYOhVHJCpMkjNVEwZdgaAb+Y93zFaXGAWTI378MLoNuwQydjD/BAy1e81QYEmyA+JbxqcmMZVWcM9rbriw==}
     dependencies:
       eslint-config-vue-global-api: 0.4.1
-      vue-demi: 0.12.4_vue@3.2.31
+      vue-demi: 0.12.5_vue@3.2.31
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
@@ -7186,4 +7152,93 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  r2.cnpmjs.org/@constq/eslint-config-qzr/0.0.3:
+    resolution: {integrity: sha512-m5vCTuvbYe6I3YYJ2zSjIcbYCqt1iaFZATMXNJc2hSwPaN5ADa+yG6w9pY5/5MCDndlHz7+qfP5QFVHp/FKvig==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@constq/eslint-config-qzr/-/eslint-config-qzr-0.0.3.tgz}
+    name: '@constq/eslint-config-qzr'
+    version: 0.0.3
+    dev: true
+
+  r2.cnpmjs.org/esbuild/0.12.29:
+    resolution: {integrity: sha512-w/XuoBCSwepyiZtIRsKsetiLDUVGPVw1E/R3VTFSecIy8UR7Cq3SOtwKHJMFoVqqVG36aGkzh4e8BvpO1Fdc7g==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/esbuild/-/esbuild-0.12.29.tgz}
+    name: esbuild
+    version: 0.12.29
+    hasBin: true
+    requiresBuild: true
+    dev: true
+
+  r2.cnpmjs.org/fsevents/2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/fsevents/-/fsevents-2.3.2.tgz}
+    name: fsevents
+    version: 2.3.2
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  r2.cnpmjs.org/immutable/4.0.0:
+    resolution: {integrity: sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/immutable/-/immutable-4.0.0.tgz}
+    name: immutable
+    version: 4.0.0
+    dev: true
+
+  r2.cnpmjs.org/node-notifier/8.0.2:
+    resolution: {integrity: sha512-oJP/9NAdd9+x2Q+rfphB2RJCHjod70RcRLjosiPMMu5gjIfwVnOUGq2nbTjTUbmy0DJ/tFIVT30+Qe3nzl4TJg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/node-notifier/-/node-notifier-8.0.2.tgz}
+    name: node-notifier
+    version: 8.0.2
+    requiresBuild: true
+    dependencies:
+      growly: 1.3.0
+      is-wsl: 2.2.0
+      semver: 7.3.5
+      shellwords: 0.1.1
+      uuid: 8.3.2
+      which: 2.0.2
+    dev: true
+    optional: true
+
+  r2.cnpmjs.org/pinia/2.0.9_vue@3.2.31:
+    resolution: {integrity: sha512-iuYdxLJKQ07YPyOHYH05wNG9eKWqkP/4y4GE8+RqEYtz5fwHgPA5kr6zQbg/DoEJGnR2XCm1w1vdt6ppzL9ATg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/pinia/-/pinia-2.0.9.tgz}
+    id: r2.cnpmjs.org/pinia/2.0.9
+    name: pinia
+    version: 2.0.9
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.1.3
+      vue: 3.2.31
+      vue-demi: 0.12.4_vue@3.2.31
+    dev: false
+
+  r2.cnpmjs.org/source-map/0.6.1:
+    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/source-map/-/source-map-0.6.1.tgz}
+    name: source-map
+    version: 0.6.1
+    engines: {node: '>=0.10.0'}
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  r2.cnpmjs.org/vite/2.5.10:
+    resolution: {integrity: sha512-0ObiHTi5AHyXdJcvZ67HMsDgVpjT5RehvVKv6+Q0jFZ7zDI28PF5zK9mYz2avxdA+4iJMdwCz6wnGNnn4WX5Gg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/vite/-/vite-2.5.10.tgz}
+    name: vite
+    version: 2.5.10
+    engines: {node: '>=12.2.0'}
+    hasBin: true
+    dependencies:
+      esbuild: r2.cnpmjs.org/esbuild/0.12.29
+      postcss: 8.4.12
+      resolve: 1.22.0
+      rollup: 2.70.1
+    optionalDependencies:
+      fsevents: r2.cnpmjs.org/fsevents/2.3.2
     dev: true

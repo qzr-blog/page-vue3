@@ -3,7 +3,7 @@
  * @Description  : 切换图标
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-14 11:02:16
+ * @LastEditTime : 2022-04-08 17:55:21
 -->
 
 <template>
@@ -27,11 +27,11 @@ import { defineProps, computed } from 'vue'
 const props = defineProps({
   info: {
     type: Object,
-    default: () => {}
+    default: () => { }
   },
   style: {
     type: Object,
-    default: () => {}
+    default: () => { }
   },
   fine: {
     type: Boolean,
@@ -49,6 +49,6 @@ const style = computed(() => {
 })
 </script>
 
-<style scoped lang='stylus'>
+<style scoped lang='scss'>
 
 </style>

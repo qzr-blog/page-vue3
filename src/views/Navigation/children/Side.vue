@@ -3,7 +3,7 @@
  * @Description  : 侧面栏
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-03-01 14:52:06
+ * @LastEditTime : 2022-04-11 09:55:25
 -->
 
 <template>
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div @click="showLogin = true">登录1</div>
+      <div @click="showLogin = true">登录</div>
     </div>
 
   </div>
@@ -67,73 +67,87 @@ function goBack() {
 }
 </script>
 
-<style scoped lang="stylus">
-$zoom = @block {
-  transition 1s
+<style scoped lang="scss">
+@mixin zoom {
+  transition: 1s;
 }
 
-.hide-trans
-  .placeholder
-    width 60px !important
-  .side-container
-    width 60px !important
-  .avatar
-    width 40px !important
-    height 40px !important
+.hide-trans {
+  .placeholder {
+    width: 60px !important;
+  }
+  .side-container {
+    width: 60px !important;
+  }
+  .avatar {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
 
-.side-container
-  {$flex}
-  {$zoom}
-  background #2c2e2f
-  min-height 100vh
-  width 200px
-  flex-direction column
-  justify-content flex-start
-  position fixed
-  left 0
+.side-container {
+  @include flex;
+  @include zoom;
+  background: #2c2e2f;
+  min-height: 100vh;
+  width: 200px;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  left: 0;
+}
 
-.content
-  {$flex}
-  padding 30px 0
-  // width 100%
-  flex-direction column
-  align-items flex-start
-  > div
-    padding 20px 0
-    {$flex}
-    box-sizing border-box
-    position relative
-    justify-content flex-start
-    &:hover
-      cursor pointer
-      span
-        color white
-      &:deep(svg)
-        color white !important
-    span
-      font-size 16px
-      color #898A8A
-      margin-left 20px
+.content {
+  @include flex;
+  padding: 30px 0;
+  flex-direction: column;
+  align-items: flex-start;
+  > div{
+    padding: 20px 0;
+    @include flex;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: flex-start;
+    &:hover {
+      cursor: pointer;
+      span {
+        color: white;
+      }
+      &:deep(svg) {
+        color: white !important;
+      }
+      span {
+        font-size: 16px;
+        color: #898A8A;
+        margin-left: 20px;
+      }
+    }
+  }
+}
 
 
-.avatar
-  {$zoom}
-  height 150px
-  width 150px
-  background white
-  border-radius 100%
+.avatar {
+  @include zoom;
+  height: 150px;
+  width: 150px;
+  background: white;
+  border-radius: 100%;
+}
 
-.avatar-box
-  {$zoom}
-  padding 50px 0
-  position relative
+.avatar-box {
+  @include zoom;
+  padding: 50px 0;
+  position: relative;
+}
 
-.placeholder
-  width 200px
-  {$zoom}
+.placeholder {
+  @include zoom;
+  width: 200px;
+}
 
-.avatar
-  width 120px
-  height 120px
-  border-radius 100%
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+}
 </style>

@@ -3,7 +3,7 @@
  * @Description  : 爬虫
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-02-08 18:28:37
+ * @LastEditTime : 2022-04-11 10:06:03
 -->
 
 <template>
@@ -87,53 +87,64 @@ onMounted(() => {
 })
 </script>
 
-<style scoped lang='stylus'>
-.crawler-container
-  width 250px
+<style scoped lang='scss'>
+.crawler-container {
+  width: 250px;
+}
 
-.crawler-box
-  padding 15px
-  background white
-  border-radius 5px
-  margin-bottom 20px
-  transition 1s
-  cursor pointer
+.crawler-box {
+  padding: 15px;
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: 1s;
+  cursor: pointer;
+}
 
-.content
-  margin 15px 0
+.content {
+  margin: 15px 0;
+}
 
-.main-box
-  {$flex}
-  img
-    width 50px
-    height 50px
-    margin-right 5px
-  .name
-    font-size 14px
-    color #3c3c3c
-    {$textHideLine2}
-  .price
-    font-size 14px
-    color #e62828
-    width 130px
-    margin-top 5px
-    {$textHideLine1}
+.main-box {
+  @include flex;
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+  }
+  .name {
+    @include textHideLine2;
+    font-size: 14px;
+    color: #3c3c3c;
+  }
+  .price {
+    font-size: 14px;
+    color: #e62828;
+    width: 130px;
+    margin-top: 5px;
+    @include textHideLine1;
+  }
+}
 
-.main
-  {$flex}
-  flex-direction column
-  align-items flex-start
-  justify-content space-between
+.main {
+  @include flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
 
-.attrinfo
-  {$flex}
-  justify-content space-between
-  margin-top 5px
-  div
-    font-size 12px
+.attrinfo {
+  @include flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  div {
+    font-size: 12px;
+  }
+}
 
-.more
-  text-align center
-  color #8f8f8f
-  font-size 12px
+.more {
+  text-align: center;
+  color: #8f8f8f;
+  font-size: 12px;
+}
 </style>

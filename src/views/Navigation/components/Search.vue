@@ -3,25 +3,25 @@
  * @Description  : 搜索框控件
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-17 11:32:15
+ * @LastEditTime : 2022-04-11 10:08:34
 -->
 
 <template>
   <div>
     <div class="check-tab">
-      <div v-for="(item, index) of checkList"
-           :key="index"
-           :class="{active: configStore.searchActive === index}"
-           @click="configStore.searchActive = index">
-        {{ item.name }}
-      </div>
+      <div
+        v-for="(item, index) of checkList"
+        :key="index"
+        :class="{ active: configStore.searchActive === index }"
+        @click="configStore.searchActive = index">{{ item.name }}</div>
     </div>
 
     <div class="search-container">
-      <el-input v-model="inputText"
-                placeholder="请输入关键字，按回车 / Enter 搜索"
-                clearable
-                @keyup.enter="goSearch">
+      <el-input
+        v-model="inputText"
+        placeholder="请输入关键字，按回车 / Enter 搜索"
+        clearable
+        @keyup.enter="goSearch">
         <template #suffix>
           <img class="icon-search"
                :src="ic_search">
@@ -59,47 +59,54 @@ function goSearch() {
 }
 </script>
 
-<style scoped lang='stylus'>
-.search-container
-  width 950px
-  height 60px
-  :deep(.el-input__inner)
-    height 55px !important
-    border-radius 50px
-    font-size 18px
-    background rgba(0,0,0,0.6)
-    border none
-    padding 0 30px
-    color white
-  :deep(.el-input__suffix-inner)
-    {$flex}
-    padding-right 5px
+<style scoped lang='scss'>
+.search-container {
+  width: 950px;
+  height: 60px;
+  :deep(.el-input__inner) {
+    height: 55px !important;
+    border-radius: 50px;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    padding: 0 30px;
+    color: white;
+  }
+  :deep(.el-input__suffix-inner) {
+    @include flex;
+    padding-right: 5px;
+  }
+}
 
-.icon-search
-  width 24px
-  height 24px
-  margin-right 15px
+.icon-search {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+}
 
-.check-tab
-  {$flex}
-  color white
+.check-tab {
+  @include flex;
+  color: white;
   // justify-content flex-start
-  margin-bottom 10px
-  div
-    margin 0 25px
-    font-size 18px
-    padding-bottom 10px
-    cursor pointer
-  .active
-    position relative
-    // border-bottom 3px solid white
-    &::after
-      content ''
-      height 3px
-      background white
-      position absolute
-      width 100%
-      bottom 0
-      left 0
-      border-radius 20px
+  margin-bottom: 10px;
+  div {
+    margin: 0 25px;
+    font-size: 18px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    .active {
+      position: relative;
+      &::after {
+        content: "";
+        height: 3px;
+        background: white;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-radius: 20px;
+      }
+    }
+  }
+}
 </style>

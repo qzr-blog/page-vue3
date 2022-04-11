@@ -3,7 +3,7 @@
  * @Description  : 导航页
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-13 15:04:48
+ * @LastEditTime : 2022-04-11 10:09:07
 -->
 
 <template>
@@ -24,10 +24,12 @@ import Tab from './children/Tab.vue'
 import Content from './children/Content.vue'
 </script>
 
-<style scoped lang='stylus'>
-.navigation-container
-  display flex
+<style scoped lang='scss'>
+.navigation-container {
+  display: flex;
+}
 
-.content-container
-  flex 1
+.content-container {
+  flex: 1;
+}
 </style>
