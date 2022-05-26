@@ -27,10 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: install
-        run: pnpm
+        run: yarn
 
       - name: build
-        run: pnpm build
+        run: yarn build
 
   docker:
     runs-on: ubuntu-latest
