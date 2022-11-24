@@ -29,7 +29,7 @@ const index = [{
   img: calendar,
 }, {
   name: 'chat',
-  alias: 'calendar',
+  alias: 'chat',
   img: chat,
 }, {
   name: '联系人',
