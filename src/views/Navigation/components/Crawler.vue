@@ -3,7 +3,7 @@
  * @Description  : 爬虫
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-04-11 10:06:03
+ * @LastEditTime : 2023-01-04 15:09:25
 -->
 
 <template>
@@ -21,10 +21,9 @@
                class="content"
                @click="goUrl(item.url)">
 
-            <el-tooltip
-              effect="dark"
-              :content="item.title"
-              placement="left">
+            <el-tooltip effect="dark"
+                        :content="item.title"
+                        placement="left">
               <div>
                 <div class="main-box">
                   <img :src="item.img">
@@ -63,6 +62,7 @@
 
 <script lang='ts' setup>
 import { inject, onMounted, ref } from 'vue'
+import { goUrl } from '@/utils'
 
 const api:any = inject('$api')
 

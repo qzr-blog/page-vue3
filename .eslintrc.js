@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2023-01-03 00:29:33
+ * @LastEditTime : 2023-01-04 14:42:47
  */
 
 module.exports = {
@@ -21,8 +21,8 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     'plugin:vue/vue3-essential',
     'plugin:vue/vue3-strongly-recommended',
-    '@constq/eslint-config-qzr/index',
     '@constq/eslint-config-qzr/vue',
+    '@constq/eslint-config-qzr/index',
     '@constq/eslint-config-qzr/typescript',
     'plugin:jest/recommended',
     'vue-global-api'
@@ -38,6 +38,5 @@ module.exports = {
     'jest'
   ],
   ignorePatterns: ['index.html', '/docker', '/public'],
-  rules: {
-  },
+  rules: {},
 }

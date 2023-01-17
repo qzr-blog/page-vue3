@@ -3,25 +3,25 @@
  * @Description  : 搜索框控件
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-04-11 10:08:34
+ * @LastEditTime : 2023-01-06 13:27:33
 -->
 
 <template>
   <div>
     <div class="check-tab">
-      <div
-        v-for="(item, index) of checkList"
-        :key="index"
-        :class="{ active: configStore.searchActive === index }"
-        @click="configStore.searchActive = index">{{ item.name }}</div>
+      <div v-for="(item, index) of checkList"
+           :key="index"
+           :class="{ active: configStore.searchActive === index }"
+           @click="configStore.searchActive = index">
+        {{ item.name }}
+      </div>
     </div>
 
     <div class="search-container">
-      <el-input
-        v-model="inputText"
-        placeholder="请输入关键字，按回车 / Enter 搜索"
-        clearable
-        @keyup.enter="goSearch">
+      <el-input v-model="inputText"
+                :placeholder="`请输入关键字，按回车 / Enter 在${checkList[configStore.searchActive].name}进行搜索`"
+                clearable
+                @keyup.enter="goSearch">
         <template #suffix>
           <img class="icon-search"
                :src="ic_search">
@@ -48,7 +48,7 @@ const checkList = [{
   name: '谷歌',
   href: 'https://www.google.com/search?q='
 }, {
-  name: 'smzdm',
+  name: '什么值得买',
   href: 'https://search.smzdm.com/?&=b&s='
 }]
 
@@ -63,18 +63,28 @@ function goSearch() {
 .search-container {
   width: 950px;
   height: 60px;
+
   :deep(.el-input__inner) {
     height: 55px !important;
-    border-radius: 50px;
     font-size: 18px;
-    background: rgba(0, 0, 0, 0.6);
     border: none;
     padding: 0 30px;
     color: white;
   }
+
   :deep(.el-input__suffix-inner) {
     @include flex;
     padding-right: 5px;
+  }
+
+  :deep(.el-input__wrapper.is-focus) {
+    box-shadow: none;
+  }
+
+  :deep(.el-input__wrapper) {
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: none;
+    border-radius: 50px;
   }
 }
 
@@ -89,23 +99,26 @@ function goSearch() {
   color: white;
   // justify-content flex-start
   margin-bottom: 10px;
+
   div {
     margin: 0 25px;
     font-size: 18px;
     padding-bottom: 10px;
     cursor: pointer;
-    .active {
-      position: relative;
-      &::after {
-        content: "";
-        height: 3px;
-        background: white;
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        border-radius: 20px;
-      }
+  }
+
+  .active {
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 3px;
+      background: white;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      border-radius: 20px;
     }
   }
 }

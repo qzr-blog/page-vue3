@@ -9,7 +9,7 @@ const index = [{
   desc: '一个自由软件媒体系统，控制媒体管理和流媒体'
 }, {
   name: '自动签到',
-  url: 'https://router.qzran.cn:8005/',
+  url: 'https://router.qzran.cn:8039/',
   alias: 'qiandao',
   desc: '自定义自动签到框架'
 }, {
@@ -18,28 +18,28 @@ const index = [{
   alias: 'music',
   desc: '音乐聚合平台'
 }, {
-  name: 'qBittorrent',
+  name: 'QBittorrent',
   url: 'https://router.qzran.cn:8002/',
   alias: 'qbittorrent',
   desc: '下载平台'
 }, {
-  name: 'tinyMediaManager',
+  name: 'TinyMediaManager',
   url: 'https://router.qzran.cn:8004/',
   alias: 'tinyMediaManager',
   desc: '刮削app'
 }, {
-  name: 'calibre',
+  name: 'Calibre',
   url: 'https://router.qzran.cn:8007/',
   alias: 'calibre',
   desc: '图书管理'
 }, {
-  name: 'iyuu',
+  name: 'Iyuu',
   url: 'https://router.qzran.cn:8008/',
   alias: 'music',
   desc: '一键辅种',
   img: iyuu
 }, {
-  name: 'xteve',
+  name: 'Xteve',
   url: 'https://router.qzran.cn:8010/',
   alias: 'xteve',
   desc: '电视直播服务'
@@ -49,17 +49,17 @@ const index = [{
   alias: 'chevereto',
   desc: '图床'
 }, {
-  name: 'gohttpserver',
+  name: 'Gohttpserver',
   url: 'https://router.qzran.cn:8012/',
   alias: 'yunpan',
   desc: '简易云盘'
 }, {
-  name: 'chrome',
+  name: 'Chrome',
   url: 'https://router.qzran.cn:8013/vnc.html',
   alias: 'chrome',
   desc: 'chrome浏览器'
 }, {
-  name: 'homeassistant',
+  name: 'Homeassistant',
   url: 'https://router.qzran.cn:8018/',
   alias: 'homeassistant',
   desc: '智能家居中枢'
@@ -69,17 +69,17 @@ const index = [{
   alias: 'jd',
   desc: '京东自动签到v3'
 }, {
-  name: 'navidrome',
+  name: 'Navidrome',
   url: 'https://router.qzran.cn:8028/',
   alias: 'airsonic',
   desc: '音乐播放器'
 }, {
-  name: 'baidupcs',
+  name: 'Baidupcs',
   url: 'https://router.qzran.cn:8023/',
   alias: 'baiduyun',
   desc: '百度网盘下载器'
 }, {
-  name: 'cloudDrive',
+  name: 'CloudDrive',
   url: 'https://router.qzran.cn:8024/',
   alias: 'cloudDrive',
   desc: '云盘挂载器（115、阿里）'
@@ -90,37 +90,37 @@ const index = [{
   desc: '各种脚本运行平台，包含京东签到',
   img: qinglong
 }, {
-  name: 'chesesubfinder',
+  name: 'Chesesubfinder',
   url: 'https://router.qzran.cn:8029/',
   alias: 'chesesubfinder',
   desc: '自动下载中文字幕'
 }, {
-  name: 'nas-tool',
+  name: 'Nas-Tool',
   url: 'https://router.qzran.cn:8030/',
   alias: 'nas-tool',
   desc: 'nas影音一站式服务'
 }, {
-  name: 'jackett',
+  name: 'Jackett',
   url: 'https://router.qzran.cn:8031/',
   alias: 'jackett',
   desc: '种子索引服务'
 }, {
-  name: 'flaresolverr',
+  name: 'Flaresolverr',
   url: 'https://router.qzran.cn:8032/',
   alias: 'flaresolverr',
   desc: '种子索引服务'
 }, {
-  name: 'hlink',
+  name: 'Hlink',
   url: 'https://router.qzran.cn:8033/',
   alias: 'hlink',
   desc: '硬链接服务'
 }, {
-  name: 'reader',
+  name: 'Reader',
   url: 'https://router.qzran.cn:8035/',
   alias: 'reader',
   desc: '漫画阅读器'
 }, {
-  name: 'lanraragi',
+  name: 'Lanraragi',
   url: 'https://router.qzran.cn:8036/',
   alias: 'lanraragi',
   desc: '漫画阅读器'
@@ -130,10 +130,25 @@ const index = [{
   alias: 'Tachidesk',
   desc: '漫画聚合阅读器'
 }, {
-  name: 'ddns-go',
+  name: 'Ddns-Go',
   url: 'https://router.qzran.cn:8038/',
   alias: 'ddns-go',
   desc: 'ddns服务'
+}, {
+  name: 'Audiobookshelf',
+  url: 'https://router.qzran.cn:8040/',
+  alias: 'audiobookshelf',
+  desc: '有声书管理平台'
+}, {
+  name: 'Portainer',
+  url: 'https://router.qzran.cn:8041/',
+  alias: 'portainer',
+  desc: 'Docker管理平台'
+}, {
+  name: 'Komga',
+  url: 'https://router.qzran.cn:8042/',
+  alias: 'Komga',
+  desc: '漫画阅读器'
 }]
 
 export default index

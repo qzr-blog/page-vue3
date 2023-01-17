@@ -3,18 +3,17 @@
  * @Description  : 顶部tab
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-04-11 10:02:47
+ * @LastEditTime : 2023-01-04 15:09:40
 -->
 
 <template>
   <div class="tab-container">
     <div class="tab">
       <div class="tab-box">
-        <img
-          src="@/assets/navigation/tab/ic_pickup.png"
-          class="ic-pickup"
-          :class="{ 'ic-pickup-trans': configStore.hideSide }"
-          @click="hideSide">
+        <img src="@/assets/navigation/tab/ic_pickup.png"
+             class="ic-pickup"
+             :class="{ 'ic-pickup-trans': configStore.hideSide }"
+             @click="hideSide">
         <!-- <div>武汉 晴 8°C 良</div> -->
         <div id="he-plugin-simple" />
         <div>
@@ -37,6 +36,7 @@
 </template>
 
 <script lang="ts" setup>
+import { goUrl } from '@/utils'
 import Search from '@/views/Navigation/components/Search.vue'
 
 import { onMounted, inject, ref } from 'vue'
