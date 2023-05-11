@@ -27,7 +27,9 @@
     "axios-retry": "^3.4.0",
     "element-plus": "^2.3.4",
     "pinia": "^2.0.35",
+    "pinia-plugin-persist": "^1.0.0",
     "postcss": "^8.4.23",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },

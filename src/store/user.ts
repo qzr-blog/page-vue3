@@ -22,6 +22,9 @@ export const useUser = defineStore({
   actions: {
     login(par:loginParam) {
       api.login(par)
+    },
+    logout() {
+      console.log('logout')
     }
   }
 })

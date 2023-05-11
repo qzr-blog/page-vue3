@@ -10,10 +10,6 @@
   <div class="tab-container">
     <div class="tab">
       <div class="tab-box">
-        <img src="@/assets/navigation/tab/ic_pickup.png"
-             class="ic-pickup"
-             :class="{ 'ic-pickup-trans': configStore.hideSide }"
-             @click="hideSide">
         <!-- <div>武汉 晴 8°C 良</div> -->
         <div id="he-plugin-simple" />
         <div>
@@ -47,16 +43,10 @@ import initWeather from '@/utils/weather'
 const api: any = inject('$api')
 const textInfo = ref('')
 
-const configStore = useConfig()
-
-function hideSide() {
-  configStore.hideSide = !configStore.hideSide
-}
-
 onMounted(async () => {
   initWeather()
   const hitokoto = await api.getHitokoto
-  textInfo.value = hitokoto.hitokoto
+  textInfo.value = hitokoto?.hitokoto
   console.log(hitokoto)
 })
 </script>
@@ -108,16 +98,6 @@ onMounted(async () => {
   }
 }
 
-.ic-pickup {
-  @include zoom;
-  width: 27px;
-  height: 27;
-  margin-left: 30px;
-}
-
-.ic-pickup-trans {
-  transform: rotateY(180deg);
-}
 
 .search-box {
   @include flex;

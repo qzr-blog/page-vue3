@@ -3,17 +3,18 @@
  * @Description  : 侧面栏
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-04-11 09:55:25
+ * @LastEditTime : 2023-05-11 17:12:07
 -->
 
 <template>
   <div :class="{'hide-trans': configStore.hideSide}">
     <div class="placeholder" />
     <div class="side-container">
+      <img src="@/assets/navigation/tab/ic_pickup.png"
+           class="ic-pickup"
+           :class="{ 'ic-pickup-trans': configStore.hideSide }"
+           @click="hideSide">
       <div class="avatar-box">
-        <!-- <el-avatar
-          :src="avatar"
-          :size="150" /> -->
         <img :src="avatar"
              class="avatar"
              @click="goBack">
@@ -26,11 +27,13 @@
             <Icon :info="item"
                   :style="{fontSize: '18px', color: '#898a8a'}" />
           </div>
-          <span v-show="!configStore.hideSide">{{ item.title }}</span>
+          <span :class="configStore.hideSide ? 'hide-text' : 'show-text'">{{ item.title }}</span>
         </div>
       </div>
 
-      <div @click="showLogin = true">登录</div>
+      <el-button link
+                 type="info"
+                 @click="showLogin = true">登录</el-button>
     </div>
 
   </div>
@@ -39,11 +42,10 @@
 </template>
 
 <script lang="ts" setup>
-import { inject, ref } from 'vue'
 import { useConfig } from '@/store/config'
 import { useRouter } from 'vue-router'
 
-import { markMap } from '@/config/markMap'
+import { markMap } from '../config/markMap'
 
 import avatar from '@/assets/logo.jpg'
 import Icon from '@/views/Navigation/components/Icon.vue'
@@ -60,6 +62,10 @@ function goHref(href:string) {
   window.document.querySelector(`#${href}`)?.scrollIntoView({
     behavior: 'smooth', // 定义动画过渡效果， "auto"或 "smooth" 之一。默认为 "auto"
   })
+}
+
+function hideSide() {
+  configStore.hideSide = !configStore.hideSide
 }
 
 function goBack() {
@@ -95,6 +101,15 @@ function goBack() {
   justify-content: flex-start;
   position: fixed;
   left: 0;
+  z-index: 2;
+}
+
+@keyframes show {
+  0% { opacity: 0}
+  25% { opacity: .2}
+  50% { opacity: .5}
+  75% { opacity: .8}
+  100% { opacity: 1}
 }
 
 .content {
@@ -116,11 +131,19 @@ function goBack() {
       &:deep(svg) {
         color: white !important;
       }
-      span {
-        font-size: 16px;
-        color: #898A8A;
-        margin-left: 20px;
-      }
+    }
+    span {
+      font-size: 16px;
+      color: #898A8A;
+      margin-left: 20px;
+    }
+    .show-text {
+      display: inherit;
+      animation-name: show;
+      animation-duration: 1s;
+    }
+    .hide-text {
+      display: none;
     }
   }
 }
@@ -150,4 +173,15 @@ function goBack() {
   height: 120px;
   border-radius: 100%;
 }
+
+.ic-pickup {
+  @include zoom;
+  width: 26px;
+  height: 26px;
+  margin-top: 10px;
+}
+.ic-pickup-trans {
+  transform: rotateY(-180deg);
+}
+
 </style>

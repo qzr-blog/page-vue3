@@ -1,6 +1,7 @@
 import qinglong from '@/assets/logo/docker/qinglong.png'
 import iyuu from '@/assets/logo/docker/iyuu.png'
 import jellyfin from '@/assets/logo/often/jellyfin.png'
+import komga from '@/assets/logo/docker/komga.png'
 
 const index = [{
   name: 'Jellyfin',
@@ -105,30 +106,10 @@ const index = [{
   alias: 'jackett',
   desc: '种子索引服务'
 }, {
-  name: 'Flaresolverr',
-  url: 'https://router.qzran.cn:8032/',
-  alias: 'flaresolverr',
-  desc: '种子索引服务'
-}, {
   name: 'Hlink',
   url: 'https://router.qzran.cn:8033/',
   alias: 'hlink',
   desc: '硬链接服务'
-}, {
-  name: 'Reader',
-  url: 'https://router.qzran.cn:8035/',
-  alias: 'reader',
-  desc: '漫画阅读器'
-}, {
-  name: 'Lanraragi',
-  url: 'https://router.qzran.cn:8036/',
-  alias: 'lanraragi',
-  desc: '漫画阅读器'
-}, {
-  name: 'Tachidesk',
-  url: 'https://router.qzran.cn:8037/',
-  alias: 'Tachidesk',
-  desc: '漫画聚合阅读器'
 }, {
   name: 'Ddns-Go',
   url: 'https://router.qzran.cn:8038/',
@@ -148,7 +129,8 @@ const index = [{
   name: 'Komga',
   url: 'https://router.qzran.cn:8042/',
   alias: 'Komga',
-  desc: '漫画阅读器'
+  desc: '漫画阅读器',
+  img: komga
 }]
 
 export default index

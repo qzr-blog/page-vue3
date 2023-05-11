@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2023-01-04 15:09:46
+ * @LastEditTime : 2023-05-11 16:07:49
 -->
 
 <template>
@@ -52,7 +52,7 @@
 <script lang='ts' setup>
 import { goUrl } from '@/utils'
 import Icon from '@/views/Navigation/components/Icon.vue'
-import { markMap } from '@/config/markMap'
+import { markMap } from '../config/markMap'
 import Crawler from '../components/Crawler.vue'
 </script>
 
@@ -92,6 +92,7 @@ import Crawler from '../components/Crawler.vue'
     margin-right: 10px;
   }
   span {
+    font-weight: 500;
     font-size: 18px;
   }
 }

@@ -7,6 +7,8 @@ import {
 import { defineAsyncComponent } from 'vue'
 import Navigation from '@/views/Navigation/index.vue'
 
+import beforeEach from './guard/beforeEach'
+
 const _import = (path) => defineAsyncComponent(() => import(`../views/${path}/index.vue`))
 
 const routes: Array<RouteRecordRaw> = [
@@ -28,9 +30,19 @@ const routes: Array<RouteRecordRaw> = [
   }
 ]
 
+routes.forEach(item => {
+  item.meta = {
+    ...{
+      keepAlive: true
+    }, ...item
+  }
+})
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
 })
+
+router.beforeEach(beforeEach)
 
 export default router
