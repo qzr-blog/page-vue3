@@ -1,3 +1,5 @@
+import { loginParam } from '@/types/login'
+
 export type IAPISchema = Record<string, {
   req: Record<string, any> | void
   res: Record<string, any> | any
@@ -17,10 +19,7 @@ export default interface APISchema extends IAPISchema {
     res: any
   }
   login: {
-    req: {
-      username: string
-      password: string
-    }
+    req: loginParam
     res: any
   }
 }

@@ -1,10 +1,6 @@
 import { defineStore } from 'pinia'
 import api from '@/api'
-
-interface loginParam {
-  mobile: string
-  password: string
-}
+import { loginParam } from '@/types/login'
 
 const userState = {
   token: '', // token
