@@ -14,11 +14,6 @@ const index = [{
   alias: 'qiandao',
   desc: '自定义自动签到框架'
 }, {
-  name: 'MusicPlayer',
-  url: 'https://router.qzran.cn:8009/',
-  alias: 'music',
-  desc: '音乐聚合平台'
-}, {
   name: 'QBittorrent',
   url: 'https://router.qzran.cn:8002/',
   alias: 'qbittorrent',
