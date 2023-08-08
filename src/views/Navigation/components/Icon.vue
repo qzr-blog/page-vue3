@@ -3,7 +3,7 @@
  * @Description  : 切换图标
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2023-01-04 14:42:52
+ * @LastEditTime : 2023-08-08 12:05:18
 -->
 
 <template>
@@ -22,8 +22,6 @@
 </template>
 
 <script lang='ts' setup>
-import { defineProps, computed } from 'vue'
-
 const props = defineProps({
   info: {
     type: Object,
