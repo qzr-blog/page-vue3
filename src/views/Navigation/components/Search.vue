@@ -3,7 +3,7 @@
  * @Description  : 搜索框控件
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2023-01-06 13:27:33
+ * @LastEditTime : 2023-08-08 12:13:39
 -->
 
 <template>
@@ -32,7 +32,6 @@
 </template>
 
 <script lang='ts' setup>
-import { ref } from 'vue'
 import { useConfig } from '@/store/config'
 
 import ic_search from '@/assets/navigation/search/ic_search.png'

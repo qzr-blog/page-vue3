@@ -3,7 +3,7 @@
  * @Description  :
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-04-11 09:51:22
+ * @LastEditTime : 2023-08-08 12:14:11
 -->
 
 <template>
@@ -13,7 +13,6 @@
 </template>
 
 <script lang='ts' setup>
-import { ref } from 'vue'
 import testImg from '@/assets/test.png'
 
 const test = ref('Home')

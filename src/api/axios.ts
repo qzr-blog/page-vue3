@@ -137,7 +137,7 @@ export class AxiosClass {
     return res
   }
 
-  async get<P, R>(url: string, param: P, option?: AxiosRequestConfig): Promise<R> {
+  async get<P, R>(url: string, param?: P, option?: AxiosRequestConfig): Promise<R> {
     return this.axios.get(url, {
       params: param,
       ...option
@@ -164,7 +164,7 @@ export class AxiosClass {
     })
   }
 
-  async post<P, R>(url: string, param: P, option?: AxiosRequestConfig): Promise<R> {
+  async post<P, R>(url: string, param?: P, option?: AxiosRequestConfig): Promise<R> {
     return this.axios.post(url, param, option)
   }
 
@@ -274,5 +274,5 @@ export class AxiosClass {
 }
 
 export const Axios = new AxiosClass({
-  reductId: 'data'
+  reductId: 'info'
 })

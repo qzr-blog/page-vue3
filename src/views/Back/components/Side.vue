@@ -3,7 +3,7 @@
  * @Description  : 侧边栏
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-04-11 09:50:21
+ * @LastEditTime : 2023-08-08 12:14:20
 -->
 
 <template>
@@ -38,7 +38,6 @@
 </template>
 
 <script lang="ts" setup>
-// import { inject, ref } from 'vue'
 // import { useConfig } from '@/store/config'
 // import { useRouter } from 'vue-router'
 

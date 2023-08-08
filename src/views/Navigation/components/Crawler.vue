@@ -3,74 +3,71 @@
  * @Description  : 爬虫
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2023-01-04 15:09:25
+ * @LastEditTime : 2023-08-08 13:58:53
 -->
 
 <template>
-  <div>
-    <div class="crawler-container">
-      <transition-group name="container">
-        <div v-for="(it, index) of crawler"
-             :key="index"
-             class="crawler-box">
+  <div class="crawler-container">
+    <transition-group name="container">
+      <div v-for="(it, index) of crawler"
+           :key="index"
+           class="crawler-box">
 
-          <div class="title">{{ it.title }}</div>
-          <div v-for="(item, idx) of it.content"
-               v-show="setShow(idx, it)"
-               :key="idx"
-               class="content"
-               @click="goUrl(item.url)">
+        <div class="title">{{ it.title }}</div>
+        <div v-for="(item, idx) of it.content"
+             v-show="setShow(idx, it)"
+             :key="idx"
+             class="content"
+             @click="goUrl(item.url)">
 
-            <el-tooltip effect="dark"
-                        :content="item.title"
-                        placement="left">
-              <div>
-                <div class="main-box">
-                  <img :src="item.img">
-                  <div class="main">
-                    <div class="name">{{ item.title }}</div>
-                    <div class="price">{{ item.price }}</div>
-                  </div>
-                </div>
-
-                <div v-if="item.chance"
-                     class="attrinfo">
-                  <div>值{{ item.chance }}%({{ item.up }}:{{ item.down }})</div>
-                  <div>收藏{{ item.collcet }}</div>
-                  <div>评论{{ item.comment }}</div>
-                </div>
-
-                <div v-else
-                     class="attrinfo">
-                  <div>值{{ item.up }}</div>
-                  <div>评论{{ item.comment }}</div>
+          <el-tooltip effect="dark"
+                      :content="item.title"
+                      placement="left">
+            <div>
+              <div class="main-box">
+                <img :src="item.img">
+                <div class="main">
+                  <div class="name">{{ item.title }}</div>
+                  <div class="price">{{ item.price }}</div>
                 </div>
               </div>
-            </el-tooltip>
 
-          </div>
+              <div v-if="item.chance"
+                   class="attrinfo">
+                <div>值{{ item.chance }}%({{ item.up }}:{{ item.down }})</div>
+                <div>收藏{{ item.collcet }}</div>
+                <div>评论{{ item.comment }}</div>
+              </div>
 
-          <div v-if="it.content.length >= 5"
-               class="more"
-               @click="changeHide(index)">{{ crawler[index].hide ? '收起' : '更多' }}</div>
+              <div v-else
+                   class="attrinfo">
+                <div>值{{ item.up }}</div>
+                <div>评论{{ item.comment }}</div>
+              </div>
+            </div>
+          </el-tooltip>
 
         </div>
-      </transition-group>
-    </div>
+
+        <div v-if="it.content.length >= 5"
+             class="more"
+             @click="changeHide(index)">{{ crawler[index].hide ? '收起' : '更多' }}</div>
+
+      </div>
+    </transition-group>
   </div>
 </template>
 
 <script lang='ts' setup>
-import { inject, onMounted, ref } from 'vue'
 import { goUrl } from '@/utils'
-
-const api:any = inject('$api')
+import api from '@/api'
 
 const crawler:any = ref([])
 
 async function getSmzdm() {
   const res = await api.getSmzdm()
   crawler.value = res
+  console.log(res)
   return res
 }
 

@@ -3,7 +3,7 @@
  * @Description  : 顶部tab
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2023-01-04 15:09:40
+ * @LastEditTime : 2023-08-08 13:55:06
 -->
 
 <template>
@@ -35,7 +35,6 @@
 import { goUrl } from '@/utils'
 import Search from '@/views/Navigation/components/Search.vue'
 
-import { onMounted, inject, ref } from 'vue'
 import { useConfig } from '@/store/config'
 
 import initWeather from '@/utils/weather'
@@ -45,7 +44,7 @@ const textInfo = ref('')
 
 onMounted(async () => {
   initWeather()
-  const hitokoto = await api.getHitokoto
+  const hitokoto = await api.getHitokoto()
   textInfo.value = hitokoto?.hitokoto
   console.log(hitokoto)
 })

@@ -3,7 +3,7 @@
  * @Description  : 运行前方法
  * @Autor        : Qzr(z5021996@vip.qq.com)
  * @LastEditors  : Qzr(z5021996@vip.qq.com)
- * @LastEditTime : 2022-01-21 10:07:27
+ * @LastEditTime : 2023-08-08 13:54:15
  */
 
 import utils from '@constq/qzr-utils'
@@ -27,13 +27,13 @@ export function preFun() {
  */
 export function preDom() {
   // 监听视口变化
-  window.addEventListener('resize', () => {
-    const width = window.innerWidth
-    const height = window.innerHeight
+  // window.addEventListener('resize', () => {
+  //   const width = window.innerWidth
+  //   const height = window.innerHeight
 
-    console.log('width', width)
-    console.log('height', height)
-  })
+  //   console.log('width', width)
+  //   console.log('height', height)
+  // })
 
   // 监听退出页面事件
   window.addEventListener('unload', e => {
