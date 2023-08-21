@@ -11,6 +11,7 @@ import note from '@/assets/logo/nas/note.png'
 import photo from '@/assets/logo/nas/photo.png'
 import video from '@/assets/logo/nas/video.png'
 import vmm from '@/assets/logo/nas/vmm.png'
+import surveillance from '@/assets/logo/nas/surveillance.png'
 
 import { NASURL } from '@/config/constant'
 
@@ -67,6 +68,10 @@ const index = [{
   name: 'vmm',
   alias: 'vmm',
   img: vmm,
+}, {
+  name: '监控中心',
+  alias: 'cam',
+  img: surveillance,
 }]
 
 const Index = index.map((item:any) => {
